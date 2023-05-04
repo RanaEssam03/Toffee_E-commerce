@@ -1,17 +1,25 @@
 package Order;
 
-import ShoopingCart.CartItem;
+import ShoppingCart.Cart;
 
 public class Order {
-    public CartItem cart;
-    public State state;
+    private Cart cart;
+    private State state;
     public String id;
 
-    public CartItem getCart() {
+    public float finalCost(){
+        return 20+ cart.getTotalCost();
+    }
+
+    public Cart getCart() {
         return cart;
     }
 
-    public void setCart(CartItem cart) {
+    public int gainedLoyaltyPts(){
+        return (int) (finalCost()*0.2);
+    }
+
+    public void setCart(Cart cart) {
         this.cart = cart;
     }
 

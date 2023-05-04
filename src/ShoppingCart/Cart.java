@@ -1,7 +1,5 @@
-package ShoopingCart;
-import Item.Item;
+package ShoppingCart;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Cart {
 //    private Boolean isPrePay;
@@ -33,6 +31,8 @@ public class Cart {
     }
 
     void addItem(CartItem item){
+        totalCost += item.getPrice()* item.getQuantity();
+
        for( int i = 0 ; i < items.size() ; i++){
            if(this.items.get(i).getName() == item.getName()){
                items.get(i).setQuantity(items.get(i).getQuantity()+item.getQuantity()); // check of the added item already in the cart
@@ -40,7 +40,5 @@ public class Cart {
            }
        }
        items.add(item);
-       ///TODo
-        // update total coast
     }
 }

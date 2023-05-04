@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/account/demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShoopingCart/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoopingCart/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/Credentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoopingCart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShoopingCart/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart/CartItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +22,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>

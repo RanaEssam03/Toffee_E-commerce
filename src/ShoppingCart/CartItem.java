@@ -1,4 +1,4 @@
-package ShoopingCart;
+package ShoppingCart;
 
 import Item.Item;
 import Item.Category;
