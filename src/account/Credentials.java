@@ -1,27 +1,27 @@
 package account;
 
 public class Credentials {
-   private String[] email;
-    private String[] password;
+   private String[] emails;
+    private String[] passwords;
     private int numUsers;
 
     public Credentials(int capacity) {
-        email = new String[capacity];
-        password = new String[capacity];
+        emails = new String[capacity];
+        passwords = new String[capacity];
         numUsers = 0;
     }
 
     public boolean addUser(String email, String password) {
         // Check if email already exists in the array
         for (int i = 0; i < numUsers; i++) {
-            if (email[i].equals(email)) {
+            if (emails[i].equals(email)) {
                 return false;
             }
         }
 
         // Add user to the array
-        email[numUsers] = email;
-        password[numUsers] = password;
+        emails[numUsers] = email;
+        passwords[numUsers] = password;
         numUsers++;
 
         return true;
@@ -30,7 +30,7 @@ public class Credentials {
     public boolean checkUser(String e, String p) {
         // Check if email and password match a user in the array
         for (int i = 0; i < numUsers; i++) {
-            if (email[i].equals(e) && password[i].equals(p)) {
+            if (emails[i].equals(e) && passwords[i].equals(p)) {
                 return true;
             }
         }
@@ -38,5 +38,5 @@ public class Credentials {
         return false;
     }
 }
-}
-}
+
+

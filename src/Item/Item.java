@@ -12,7 +12,7 @@ public class Item {
     private int quantity;
     private int sales;
     private ItemStatus status;
-    Item(String name, Category category, String description, String brand, float price, Type type, int quantity){
+    public Item(String name, Category category, String description, String brand, float price, Type type){
         setName(name);
         setCategory(category);
         setDescription(description);
