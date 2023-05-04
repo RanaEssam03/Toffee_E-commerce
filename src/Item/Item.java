@@ -12,14 +12,14 @@ public class Item {
     private int quantity;
     private int sales;
     private ItemStatus status;
-    public Item(String name, Category category, String description, String brand, float price, Type type){
+    public Item(String name, Category category, String description, String brand, float price){
         setName(name);
         setCategory(category);
         setDescription(description);
         setBrand(brand);
         setPrice(price);
         discountPercentage = 0;
-        setType(type);
+        setType(Type.LOOSE);
         setQuantity(quantity);
         sales = 0;
         status = ItemStatus.NOT_ON_SALE;
