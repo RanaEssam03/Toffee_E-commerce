@@ -1,26 +1,71 @@
 package Order;
 
-import ShoppingCart.Cart;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+import Item.*;
 
 public class Order {
-    private Cart cart;
-    private State state;
-    public String id;
 
-    public float finalCost(){
-        return 20+ cart.getTotalCost();
+    ArrayList<CartItem>cart;
+    private State state;
+    public int id;
+
+    private float totalCost;
+    private int quantity;
+
+    private String address;
+
+    public String getAddress() {
+        return address;
     }
 
-    public Cart getCart() {
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private int customerId;
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    Order(int id, int customerId){
+        this.id = id;
+        quantity=0;
+        totalCost=0;
+        state = State.inProgress;
+        this.customerId = customerId;
+
+    }
+    public ArrayList<CartItem> getCart() {
         return cart;
     }
 
-    public int gainedLoyaltyPts(){
-        return (int) (finalCost()*0.2);
+    public void setCart(ArrayList<CartItem> cart) {
+        this.cart = cart;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+
+    public float getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(float totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public State getState() {
@@ -31,11 +76,24 @@ public class Order {
         this.state = state;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+    public void addToCart(int quantity, Item item ){
+        totalCost += quantity* item.getPrice();
+        this.quantity += quantity;
+        cart.add(new CartItem(item, quantity));
+    }
+
+    public int getGainedLoyaltyPts(){
+        return (int) (totalCost* 0.2);
+    }
+
+
 }
