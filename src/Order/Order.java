@@ -8,7 +8,7 @@ import Item.*;
 
 public class Order {
 
-    ArrayList<CartItem>cart;
+    ArrayList<CartItem>cart = new ArrayList<>();
     private State state;
     public int id;
 
@@ -35,7 +35,7 @@ public class Order {
         this.customerId = customerId;
     }
 
-    Order(int id, int customerId){
+    public Order(int id, int customerId){
         this.id = id;
         quantity=0;
         totalCost=0;

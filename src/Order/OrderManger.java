@@ -8,15 +8,15 @@ import java.util.Scanner;
 
 public class OrderManger {
 
-    private HashMap<Integer, Order> orders;
-
-    private HashMap<String, Item> catalog;
+    private HashMap<Integer, Order> orders = new HashMap<>();
+    private CatalogManager catalog ;
 
     private int orderId;
 
-    public void updateCatalog(String code, String name, float unitPrice, Category category, String description , String brand){
-        catalog.put(code, new Item(name, category, description, brand, unitPrice));
+    public OrderManger(CatalogManager catalog){
+        this.catalog = catalog;
     }
+
 
     public HashMap<Integer, Order> getOrders() {
         return orders;
@@ -26,13 +26,6 @@ public class OrderManger {
         this.orders = orders;
     }
 
-    public HashMap<String, Item> getCatalog() {
-        return catalog;
-    }
-
-    public void setCatalog(HashMap<String, Item> catalog) {
-        this.catalog = catalog;
-    }
 
     public int getOrderId() {
         return orderId;
@@ -42,14 +35,19 @@ public class OrderManger {
         this.orderId = orderId;
     }
 
-    public void creatOrder(int customerId){
+    public Order creatOrder(int customerId){
         ++orderId;
         Order order = new Order(orderId, customerId);
         orders.put(orderId, order);
+        return order;
     }
 
-    void checkOutOrder(){
+   public void checkOutOrder(){
         Order currentOrder = orders.get(orderId);
+        if(currentOrder.getCart().size() == 0){
+            System.out.println("CART IS EMPTY!");
+            return;
+        }
         System.out.println("Please enter Your Address");
         Scanner myObj = new Scanner(System.in);
         currentOrder.setAddress( myObj.nextLine());
