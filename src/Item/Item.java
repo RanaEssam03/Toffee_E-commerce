@@ -3,7 +3,7 @@ package Item;
 public class Item {
     static int ID = 0;
     private String name;
-    private Category category;
+    private String category;
     private String description;
     private String brand;
     private float price;
@@ -12,7 +12,7 @@ public class Item {
     private int quantity;
     private int sales;
     private ItemStatus status;
-    public Item(String name, Category category, String description, String brand, float price){
+    public Item(String name, String category, String description, String brand, float price){
         setName(name);
         setCategory(category);
         setDescription(description);
@@ -30,10 +30,10 @@ public class Item {
     public String getName(){
         return this.name;
     }
-    public void setCategory(Category category){
+    public void setCategory(String category){
         this.category = category;
     }
-    public Category getCategory(){
+    public String getCategory(){
         return this.category;
     }
     public void setDescription(String description) {
