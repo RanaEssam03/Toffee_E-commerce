@@ -12,18 +12,30 @@ public class Item {
     private int quantity;
     private int sales;
     private ItemStatus status;
-    public Item(String name, String category, String description, String brand, float price){
+    /**
+     *
+     * @param name : name of the item.
+     * @param category : category of the item.
+     * @param description : description of the item (ex: ingredients).
+     * @param brand : brand of the item.
+     * @param price : price of the item.
+//     * @param type : type of the item (ex: loose or solid).
+     */
+    Item(String name, String category, String description, String brand, float price){
         setName(name);
         setCategory(category);
         setDescription(description);
         setBrand(brand);
         setPrice(price);
         discountPercentage = 0;
-        setType(Type.LOOSE);
-        setQuantity(quantity);
+        setType(type);
+//        setQuantity(quantity);
+        //TODO  set quantity
+        //TODO set type
+
         sales = 0;
         status = ItemStatus.NOT_ON_SALE;
-    }
+        }
     public void setName(String name){
         this.name = name;
     }
@@ -33,9 +45,19 @@ public class Item {
     public void setCategory(String category){
         this.category = category;
     }
+
+    /**
+     *
+     * @return Category
+     */
+
     public String getCategory(){
         return this.category;
     }
+
+
+
+
     public void setDescription(String description) {
         this.description = description;
     }

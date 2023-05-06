@@ -15,7 +15,7 @@ public class CatalogManager {
     }
 
     public void viewCatalog(){
-
+        //TODO view available quantity
         System.out.println("    -> 0. main menu <-");
 
         for(Map.Entry<Integer, Item> set : catalog.entrySet()){
@@ -43,17 +43,37 @@ public class CatalogManager {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+    public void loadData(){
+        //TODO implement function loadData
+    }
 
 
-//    public void addItem(Item item){
-//        items.add(item);
-//    }
-//    public void displayCategoryList(){
-//        for (Item item : items) {
-//            System.out.println(item);
-//        }
-//    }
-//    public void deleteItem(Item item){
-//        items.removeIf(i -> i == item);
-//    }
+    /**
+     *
+     * @param category : category that the discount will be applied on
+     * @param discount : discount percentage
+     */
+
+    public void addDiscountToCategory(String category, float discount){
+        for (Map.Entry<Integer, Item> set : catalog.entrySet()){
+            if (set.getValue().getCategory() == category){
+                set.getValue().setDiscountPercentage(discount);
+                if (set.getValue().getQuantity() != 0){
+                    set.getValue().setStatus(ItemStatus.ON_SALE);
+                }
+                float price = set.getValue().getPrice();
+                price = price - price*discount;
+                set.getValue().setPrice(price);
+            }
+        }
+    }
+    /**
+     *
+     * @param id : id of the item to be removed
+     */
+    public void deleteItem(Integer id){
+        catalog.remove(id);
+    }
+
+
 }
