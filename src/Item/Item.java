@@ -1,7 +1,6 @@
 package Item;
 
 public class Item {
-    static int ID = 0;
     private String name;
     private String category;
     private String description;
@@ -12,17 +11,33 @@ public class Item {
     private int quantity;
     private int sales;
     private ItemStatus status;
-    public Item(String name, String category, String description, String brand, float price){
+    /**
+     *
+     * @param name : name of the item.
+     * @param category : category of the item.
+     * @param description : description of the item (ex: ingredients).
+     * @param brand : brand of the item.
+     * @param price : price of the item.
+     */
+    Item(String name, String category, String description, String brand, int quantity, float price){
         setName(name);
         setCategory(category);
         setDescription(description);
         setBrand(brand);
         setPrice(price);
         discountPercentage = 0;
-        setType(Type.LOOSE);
         setQuantity(quantity);
         sales = 0;
         status = ItemStatus.NOT_ON_SALE;
+        if (quantity == 0){
+            setStatus(ItemStatus.OUT_OF_STOCK);
+        }
+        else if (discountPercentage > 0){
+            setStatus(ItemStatus.ON_SALE);
+        }
+        else{
+            setStatus(ItemStatus.NOT_ON_SALE);
+        }
     }
     public void setName(String name){
         this.name = name;
@@ -33,6 +48,12 @@ public class Item {
     public void setCategory(String category){
         this.category = category;
     }
+
+    /**
+     *
+     * @return Category
+     */
+
     public String getCategory(){
         return this.category;
     }
