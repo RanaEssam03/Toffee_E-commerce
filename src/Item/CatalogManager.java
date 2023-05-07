@@ -1,14 +1,10 @@
 package Item;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 public class CatalogManager {
     private HashMap<Integer, Item> catalog = new HashMap<>();
@@ -44,25 +40,50 @@ public class CatalogManager {
      *
      * @param file : csv file that the data will be read from
      */
-    public void loadData(String file){
+    public void loadData(String file) throws IOException {
+        File file2 = new File("items.csv");
         try {
             HashMap<Integer, Item> cat = new HashMap<>();
-            FileReader fileReader = new FileReader(file);
-            CSVReader csvReader = new CSVReader(fileReader);
+            FileReader fileReader = new FileReader(file2);
+
+            Scanner sc = new Scanner(new File(file2.toURI()));
+            sc.useDelimiter(",");
+//            CSVReader csvReader = new CSVReader(fileReader, ',');
+//            System.out.print(sc.next());
             String[] nextRecord;
-            while ((nextRecord = csvReader.readNext()) != null){
+            while (sc.hasNext()){
                 ArrayList<String> strings = new ArrayList<>();
-                Collections.addAll(strings, nextRecord);
-                int id = Integer.parseInt(strings.get(0));
+                int x = 6;
+                int y = 0;
+                while(x!=0){
+                    String s = sc.next();
+                    ((ArrayList<String>) strings).add(s);
+                    x--;
+                }
+
                 float price = Float.parseFloat(strings.get(strings.size()-1));
                 int quantity = Integer.parseInt(strings.get(strings.size()-2));
-                Item item = new Item(strings.get(1), strings.get(2), strings.get(3), strings.get(4), quantity, price);
-                cat.put(id, item);
+                    Item item = new Item(strings.get(0), strings.get(1), strings.get(2), strings.get(3), quantity, price);
+                cat.put(++itemID, item);
             }
+
+
             setCatalog(cat);
         }
         catch (IOException e) {
-            throw new RuntimeException(e);
+            FileWriter outputfile = new FileWriter(file2);
+
+            // create CSVWriter object filewriter object as parameter
+            CSVWriter writer = new CSVWriter(outputfile);
+            List<String[]> data = new ArrayList<String[]>();
+//            catalogManager.updateCatalog("cotton candy","Category1", "kids", "egyFood" );
+//            catalogManager.updateCatalog("Lollipop", "Category2", "kids","egyFood");
+            data.add(new String[] {"1","Lollipop", "Category2", "kids","egyFood" , "100" });
+            data.add(new String[]{"2","Lollipop", "Category2", "kids","egyFood" , "100" });
+            data.add(new String[] { "2","Lollipop", "Category2", "kids","egyFood" , "100" });
+            writer.writeAll(data);
+            writer.close();
+
         }
     }
     /**
@@ -119,3 +140,8 @@ public class CatalogManager {
 
     //lazem a7awel kol el 7agat eli fe el hashmap le strings 3shan a3rf a overwrite
 }
+
+
+//                Collections.addAll(strings, nextRecord);
+//                int id = Integer.parseInt(strings.get(0));
+
