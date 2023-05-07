@@ -91,7 +91,7 @@ public class CatalogManager {
         catalog.remove(id);
     }
     public int checkQuantity(int id, int quantity){
-        if (quantity > catalog.get(id).getQuantity()){
+        if (quantity <= catalog.get(id).getQuantity()){
             // if the quantity wanted is available
             // but is greater than 50
             if (quantity > 50){

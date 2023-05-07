@@ -53,7 +53,6 @@ public class Item {
      *
      * @return Category
      */
-
     public String getCategory(){
         return this.category;
     }
