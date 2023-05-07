@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         CatalogManager catalogManager = new CatalogManager();
         OrderManger orderManger = new OrderManger(catalogManager);
-        catalogManager.updateCatalog("cotton candy", 25, "kids", " ", "egyFood");
-        catalogManager.updateCatalog("Lollipop", 5, "kids", " ", "egyFood");
+        catalogManager.updateCatalog("cotton candy","Category1", "kids", "egyFood", 100, 25);
+        catalogManager.updateCatalog("Lollipop", "Category2", "kids","egyFood" , 100, 20);
         System.out.println("Welcome to TOFFEE");
 
         while (true)
@@ -60,6 +60,18 @@ public class Main {
                         }
                         System.out.print("please select quantity=> ");
                         int quantity = scan.nextInt();
+                        int check = catalogManager.checkQuantity(id, quantity);
+                        while (check == 1){
+                            System.out.print("The Limit is 50, please change the quantity entered: ");
+                            quantity = scan.nextInt();
+                            check = catalogManager.checkQuantity(id, quantity);
+                        }
+                        while (check != 2){
+                            System.out.print("The quantity available is:" + check +
+                                    ", please choose within available quantity: ");
+                            quantity = scan.nextInt();
+                            check = catalogManager.checkQuantity(id, quantity);
+                        }
                         order.addToCart(quantity, catalogManager.getCatalog().get(id));
                         System.out.println("_________________________________________________");
 

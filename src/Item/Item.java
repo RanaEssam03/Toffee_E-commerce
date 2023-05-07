@@ -1,7 +1,6 @@
 package Item;
 
 public class Item {
-    static int ID = 0;
     private String name;
     private String category;
     private String description;
@@ -19,23 +18,27 @@ public class Item {
      * @param description : description of the item (ex: ingredients).
      * @param brand : brand of the item.
      * @param price : price of the item.
-//     * @param type : type of the item (ex: loose or solid).
      */
-    Item(String name, String category, String description, String brand, float price){
+    Item(String name, String category, String description, String brand, int quantity, float price){
         setName(name);
         setCategory(category);
         setDescription(description);
         setBrand(brand);
         setPrice(price);
         discountPercentage = 0;
-        setType(type);
-//        setQuantity(quantity);
-        //TODO  set quantity
-        //TODO set type
-
+        setQuantity(quantity);
         sales = 0;
         status = ItemStatus.NOT_ON_SALE;
+        if (quantity == 0){
+            setStatus(ItemStatus.OUT_OF_STOCK);
         }
+        else if (discountPercentage > 0){
+            setStatus(ItemStatus.ON_SALE);
+        }
+        else{
+            setStatus(ItemStatus.NOT_ON_SALE);
+        }
+    }
     public void setName(String name){
         this.name = name;
     }
@@ -54,10 +57,6 @@ public class Item {
     public String getCategory(){
         return this.category;
     }
-
-
-
-
     public void setDescription(String description) {
         this.description = description;
     }
