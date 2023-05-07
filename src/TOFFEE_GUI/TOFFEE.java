@@ -1,4 +1,4 @@
-package TOFFEE;
+package TOFFEE_GUI;
 
 import Item.CatalogManager;
 import Order.Order;
