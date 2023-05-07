@@ -71,6 +71,11 @@ public class Main {
                                     ", please choose within available quantity: ");
                             quantity = scan.nextInt();
                             check = catalogManager.checkQuantity(id, quantity);
+                            while (check == 1){
+                                System.out.print("The Limit is 50, please change the quantity entered: ");
+                                quantity = scan.nextInt();
+                                check = catalogManager.checkQuantity(id, quantity);
+                            }
                         }
                         order.addToCart(quantity, catalogManager.getCatalog().get(id));
                         System.out.println("_________________________________________________");
