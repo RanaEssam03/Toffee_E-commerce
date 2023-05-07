@@ -1,0 +1,2 @@
+1, cotton candy, Category1, kids, egyFood, 100, 25
+2, Lollipop, Category2, kids,egyFood , 100, 20
