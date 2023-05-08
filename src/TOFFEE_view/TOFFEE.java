@@ -1,4 +1,4 @@
-package TOFFEE_GUI;
+package TOFFEE_view;
 
 import Item.CatalogManager;
 import Order.Order;
@@ -61,6 +61,7 @@ public class TOFFEE {
                                 check = catalogManager.checkQuantity(id, quantity);
                             }
                         }
+                        catalogManager.decreaseQuantity(id, quantity);
                         order.addToCart(quantity, catalogManager.getCatalog().get(id));
                         System.out.println("_________________________________________________");
 

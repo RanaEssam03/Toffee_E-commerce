@@ -17,7 +17,12 @@
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-            <version>4.1</version>
+            <version>5.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wolf480pl</groupId>
+            <artifactId>jline-log4j2-appender</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
