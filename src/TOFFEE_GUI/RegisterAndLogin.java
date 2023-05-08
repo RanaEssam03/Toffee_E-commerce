@@ -111,3 +111,18 @@ public class RegisterAndLogin {
 
 
 }
+
+
+//public class Test {
+//
+//    public static void main(final String[] args) throws Exception {
+//        ConsoleReader reader = new ConsoleReader();
+//        Character mask = '*';
+//        String line = null;
+//        do {
+//            line = reader.readLine("Enter Password(blank pwd to exit)> ", mask);
+//            System.out.println("Got password: " + line);
+//        } while (line != null && line.length() > 0);
+//    }
+//
+//}

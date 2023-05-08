@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customers.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Maven/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OTP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OTP.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toffee.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/items.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TOFFEE_GUI/TOFFEE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_GUI/TOFFEE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/BuildingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/BuildingInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Credentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +131,7 @@
       <workItem from="1683549053265" duration="7147000" />
       <workItem from="1683556313520" duration="1148000" />
       <workItem from="1683557495424" duration="3134000" />
+      <workItem from="1683574551748" duration="780000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
@@ -186,7 +167,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Item/CatalogManager.java</url>
-          <line>44</line>
+          <line>45</line>
           <properties class="Item.CatalogManager" method="loadData">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -195,7 +176,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java</url>
-          <line>35</line>
+          <line>36</line>
           <properties class="TOFFEE_GUI.RegisterAndLogin" method="signUp">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
