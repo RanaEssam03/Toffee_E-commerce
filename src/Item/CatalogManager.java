@@ -1,9 +1,11 @@
 package Item;
 
-import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class CatalogManager {
@@ -125,6 +127,15 @@ public class CatalogManager {
         // if the quantity wanted is not available
         return catalog.get(id).getQuantity();
     }
+    public void decreaseQuantity(int id, int quant){
+        int newQuantity = catalog.get(id).getQuantity();
+        newQuantity -= quant;
+        catalog.get(id).setQuantity(newQuantity);
+    }
+
+
+    // TODO overwrite function
+    //
 //    public static void generateCsvFile(String fileName, HashMap<Integer, Item> cat){
 //        try{
 //            FileWriter writer = new FileWriter(fileName);

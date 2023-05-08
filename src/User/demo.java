@@ -1,4 +1,4 @@
-package account;
+package User;
 
 public class demo {
 }

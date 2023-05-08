@@ -1,12 +1,17 @@
-import TOFFEE_GUI.TOFFEE;
+import TOFFEE_GUI.RegisterAndLogin;
 
 import java.io.IOException;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        TOFFEE toffee = new TOFFEE();
-        toffee.start();
+
+//        Credentials c = new Credentials();
+//        AccountManager u = new AccountManager(c);
+//        u.sendOTP("ranaessam03@gmail.com");
+
+        RegisterAndLogin p = new RegisterAndLogin();
+        p.start();
 
     }
 }
