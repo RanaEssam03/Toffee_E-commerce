@@ -1,4 +1,4 @@
-import TOFFEE_GUI.RegisterAndLogin;
+import TOFFEE_view.RegisterAndLogin;
 
 import java.io.IOException;
 

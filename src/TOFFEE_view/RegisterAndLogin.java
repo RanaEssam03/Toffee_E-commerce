@@ -1,4 +1,4 @@
-package TOFFEE_GUI;
+package TOFFEE_view;
 
 import User.Account;
 import User.AccountManager;
