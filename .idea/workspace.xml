@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2023_1_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2023_1_41_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maven/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Maven/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OTP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OTP.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toffee.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/items.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TOFFEE_view/RegisterAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_view/RegisterAndLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/CustomerStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Vouchers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/demo.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Merging integration&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/intro_to_software/assignments/Assignment 3/Toffee_E-commerce&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/data_structure/assignments/Toffee_E-commerce&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -132,6 +131,8 @@
       <workItem from="1683556313520" duration="1148000" />
       <workItem from="1683557495424" duration="3134000" />
       <workItem from="1683574551748" duration="780000" />
+      <workItem from="1683635563391" duration="120000" />
+      <workItem from="1683635733661" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
