@@ -1,16 +1,15 @@
 package Order;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import Item.Item;
 
-import Item.*;
+import java.util.ArrayList;
 
 public class Order {
 
     ArrayList<CartItem>cart = new ArrayList<>();
+
     private State state;
-    public int id;
+    private int id;
 
     private float totalCost;
     private int quantity;
@@ -95,5 +94,9 @@ public class Order {
         return (int) (totalCost* 0.2);
     }
 
+    public String  toString (){
+        return id+","+cart.toString()+ "," +this.totalCost + "," + this.state+","
+                + this.address+ "," + this.customerId;
 
+    }
 }

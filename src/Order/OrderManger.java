@@ -1,8 +1,11 @@
 package Order;
-import Item.*;
 
+import Item.CatalogManager;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -59,6 +62,20 @@ public class OrderManger {
             currentOrder.setState ( State.outForDelivery);
         }
         orders.put(orderId, currentOrder);
+    }
+
+    public void uploadOrders(){
+        try {
+            FileWriter writer = new FileWriter("orders.txt");
+            for(Map.Entry<Integer,Order > set : orders.entrySet()){
+                writer.write(set.getValue() +"\n");
+            }
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
     }
 
 }
