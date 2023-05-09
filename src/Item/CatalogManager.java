@@ -10,40 +10,65 @@ import java.io.IOException;
 import java.util.*;
 
 public class CatalogManager {
-    private HashMap<Integer, Item> catalog = new HashMap<>();
+
     private int itemID;
-    public CatalogManager(){
-        itemID=0;
-    }
-    public void updateCatalog(String name, String category, String description, String brand, int quantity, float price){
-        catalog.put(++itemID, new Item(name, category, description, brand,quantity, price));
-    }
-    public void viewCatalog(){
-        System.out.println("    -> 0. main menu <-");
-        for(Map.Entry<Integer, Item> set : catalog.entrySet()){
-            System.out.print(set.getKey() + "." + set.getValue().getName() + " " + set.getValue().getPrice() + " "
-                    + set.getValue().getQuantity() + " "+ set.getValue().getBrand());
-            System.out.println();
-        }
-        System.out.println("_________________________________________________");
-    }
+
+    private HashMap<Integer, Item> catalog = new HashMap<>();
+
     public HashMap<Integer, Item> getCatalog() {
         return catalog;
     }
+
+    /**
+     * Constructor to catalog manager which sets initial value for items id
+     */
+    public CatalogManager(){
+        itemID=0;
+    }
+
+    /**
+     * this function update the catalog with new item
+     * @param name item name
+     * @param category refers to the category of the item
+     * @param description refers to the nutrition facts description of the item
+     * @param brand refers to the brand of the item
+     * @param quantity refers to the available quantity in the store
+     * @param price refers to the price of the item
+     */
+    public void updateCatalog(String name, String category, String description, String brand, int quantity, float price){
+        catalog.put(++itemID, new Item(name, category, description, brand,quantity, price));
+    }
+
+
+    /**
+     * this function responsible for set catalog after loading it from the database
+     * @param catalog
+     */
     public void setCatalog(HashMap<Integer, Item> catalog) {
         this.catalog = catalog;
     }
+
+    /**
+     * itemId getter
+     * @return the item id which set automatically by the system
+     */
     public int getItemId() {
         return itemID;
     }
+
+    /**
+     * orderId setter
+     * @param orderId with set automatically by the system
+     */
     public void setItemId(int orderId) {
         this.itemID = orderId;
     }
+
     /**
-     *
-     * @param file : csv file that the data will be read from
+     * this function responsible for load the catalog from the database
+     * or create a file with initial values if it does not exist
      */
-    public void loadData(String file) throws IOException {
+    public void loadData() throws IOException {
         File file2 = new File("items.csv");
         try {
             HashMap<Integer, Item> cat = new HashMap<>();
@@ -51,9 +76,7 @@ public class CatalogManager {
 
             Scanner sc = new Scanner(new File(file2.toURI()));
             sc.useDelimiter(",");
-//            CSVReader csvReader = new CSVReader(fileReader, ',');
-//            System.out.print(sc.next());
-            String[] nextRecord;
+
             while (sc.hasNext()){
                 ArrayList<String> strings = new ArrayList<>();
                 int x = 6;
@@ -75,22 +98,21 @@ public class CatalogManager {
         }
         catch (IOException e) {
             FileWriter outputfile = new FileWriter(file2);
-
-            // create CSVWriter object filewriter object as parameter
             CSVWriter writer = new CSVWriter(outputfile);
             List<String[]> data = new ArrayList<String[]>();
-//            catalogManager.updateCatalog("cotton candy","Category1", "kids", "egyFood" );
-//            catalogManager.updateCatalog("Lollipop", "Category2", "kids","egyFood");
             data.add(new String[] {"1","Lollipop", "Category2", "kids","egyFood" , "100" });
             data.add(new String[]{"2","Lollipop", "Category2", "kids","egyFood" , "100" });
             data.add(new String[] { "2","Lollipop", "Category2", "kids","egyFood" , "100" });
             writer.writeAll(data);
             writer.close();
+            loadData();
+            //TODO create catalog file
 
         }
     }
+
     /**
-     *
+     * this function is responsible for add a discount by category
      * @param category : category that the discount will be applied on
      * @param discount : discount percentage
      */
@@ -107,8 +129,9 @@ public class CatalogManager {
             }
         }
     }
+
     /**
-     *
+     * de
      * @param id : id of the item to be removed
      */
     public void deleteItem(Integer id){
