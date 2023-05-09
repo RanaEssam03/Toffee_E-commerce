@@ -29,7 +29,7 @@ public class TOFFEEView {
         }
         System.out.println("_________________________________________________");
     }
-   private void shopping(){
+   private void shopping() throws IOException {
        Scanner scan = new Scanner(System.in);
        int x;
        Order order = orderManger.creatOrder(5);
@@ -40,6 +40,7 @@ public class TOFFEEView {
                       viewCatalog();
                         int id = scan.nextInt();
                         if(id == 0){
+                            checkOut();
                             break;
                         }
                         System.out.print("please select quantity=> ");
@@ -93,7 +94,7 @@ public class TOFFEEView {
                 System.out.println("_________________________________________________");
 
                 if (x == 1) {
-                    viewCatalog();
+                    shopping();
                     break;
                 }
                 if (x == 2) {
@@ -107,7 +108,7 @@ public class TOFFEEView {
 
     }
 
-    void checkOut(){
+    void checkOut() throws IOException {
         System.out.println("        #Order Checkout#");
         orderManger.checkOutOrder();
         System.out.println("_________________________________________________");

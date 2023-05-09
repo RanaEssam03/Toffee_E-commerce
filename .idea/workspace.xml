@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2023_1_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2023_1_41_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TOFFEE_view/RegisterAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_view/RegisterAndLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/CustomerStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/Vouchers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TOFFEEView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TOFFEEView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +167,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Item/CatalogManager.java</url>
           <line>45</line>
-          <properties class="Item.CatalogManager" method="loadData">
+          <properties class="Item.CatalogManager" method="setCatalog">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -178,7 +176,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java</url>
           <line>36</line>
-          <properties class="TOFFEE_GUI.RegisterAndLogin" method="signUp">
+          <properties class="TOFFEE_GUI.RegisterAndLogin">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
