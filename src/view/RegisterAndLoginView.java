@@ -22,36 +22,35 @@ public class RegisterAndLoginView {
 
 
     public void start() throws IOException {
-        int option ;
+        int option;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("            Welcome to TOFFEE");
         System.out.println("Please pick one option ");
         System.out.println("1. Sign up");
-        System.out.println("2. Login " );
+        System.out.println("2. Login ");
 
         option = scan.nextInt();
-        if(option == 1){
+        if (option == 1) {
             signUp();
-        }
-        else{
+        } else {
             login();
         }
     }
 
-    private  void signUp() throws IOException {
+    private void signUp() throws IOException {
         Customer customer = new Customer();
         Scanner scan = new Scanner(System.in);
 
-        String email , password, confirmPassword;
+        String email, password, confirmPassword;
         System.out.print("Please enter your email: ");
-        email= scan.nextLine();
-        while (!accountManager.isValidEmail(email)){
+        email = scan.nextLine();
+        while (!accountManager.isValidEmail(email)) {
             System.out.println("Invalid Email");
             System.out.print("Please enter your email: ");
-            email= scan.nextLine();
+            email = scan.nextLine();
         }
-        if (!accountManager.isUniqueEmail(email)){
+        if (!accountManager.isUniqueEmail(email)) {
             System.out.println("You already have an account !");
             login();
         }
@@ -63,8 +62,7 @@ public class RegisterAndLoginView {
         confirmPassword = scan.nextLine();
 
 
-
-        while (!Objects.equals(confirmPassword, password)){
+        while (!Objects.equals(confirmPassword, password)) {
             System.out.println("passwords do not match");
             System.out.print("Password: ");
             password = scan.nextLine();
@@ -76,10 +74,10 @@ public class RegisterAndLoginView {
         System.out.print("Please enter OTP: ");
         String otpMatch = scan.nextLine();
 
-        while (!Objects.equals(otp, otpMatch)){
+        while (!Objects.equals(otp, otpMatch)) {
             System.out.println("Invalid OTP");
             System.out.print("Please enter OTP: ");
-             otpMatch = scan.nextLine();
+            otpMatch = scan.nextLine();
         }
         accountManager.addUser(new Credentials(email, password));
         login();
@@ -91,22 +89,18 @@ public class RegisterAndLoginView {
         Scanner scan = new Scanner(System.in);
         System.out.println("    Please enter");
         System.out.print("Email: ");
-        email  = scan.nextLine();
+        email = scan.nextLine();
         System.out.print("Password: ");
         password = scan.nextLine();
 
-        if(accountManager.isUniqueEmail(email)){
+        if (accountManager.isUniqueEmail(email)) {
             System.out.println("Email does not exist ");
             signUp();
-        }
-
-       else if(accountManager.checkPassword(email, password)){
-           accountManager.updateFile();
+        } else if (accountManager.checkPassword(email, password)) {
+            accountManager.updateFile();
             toffeeView.start();
-        }
-       else{
-           while (!(accountManager.checkPassword(email, password)))
-            {
+        } else {
+            while (!(accountManager.checkPassword(email, password))) {
                 System.out.println("Invalid password");
 
                 System.out.print("Password: ");
@@ -117,7 +111,6 @@ public class RegisterAndLoginView {
 
 
     }
-
 
 
 }

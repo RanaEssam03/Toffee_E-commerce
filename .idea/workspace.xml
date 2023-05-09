@@ -6,8 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/ItemStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/ItemStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/AccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/BuildingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/BuildingInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/TOFFEEView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TOFFEEView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +93,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -131,6 +144,11 @@
       <workItem from="1683574551748" duration="780000" />
       <workItem from="1683635563391" duration="120000" />
       <workItem from="1683635733661" duration="121000" />
+      <workItem from="1683637154939" duration="733000" />
+      <workItem from="1683647645660" duration="314000" />
+      <workItem from="1683650002458" duration="48000" />
+      <workItem from="1683652544489" duration="1300000" />
+      <workItem from="1683653874135" duration="1605000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
@@ -164,15 +182,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Item/CatalogManager.java</url>
-          <line>45</line>
-          <properties class="Item.CatalogManager" method="setCatalog">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java</url>
           <line>36</line>
