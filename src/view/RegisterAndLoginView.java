@@ -22,7 +22,7 @@ public class RegisterAndLoginView {
 
 
     public void start() throws IOException {
-        int option;
+        int option ;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("      ->Welcome to TOFFEE<-");
@@ -33,9 +33,10 @@ public class RegisterAndLoginView {
 
 
         option = scan.nextInt();
-        if (option == 1) {
+        if(option == 1){
             signUp();
-        } else {
+        }
+        else{
             login();
         }
     }
@@ -52,9 +53,9 @@ public class RegisterAndLoginView {
         while (!accountManager.isValidEmail(email)){
             System.out.println("Invalid Email");
             System.out.print("Please enter your email: ");
-            email = scan.nextLine();
+            email= scan.nextLine();
         }
-        if (!accountManager.isUniqueEmail(email)) {
+        if (!accountManager.isUniqueEmail(email)){
             System.out.println("You already have an account !");
             login();
             return;
@@ -67,7 +68,8 @@ public class RegisterAndLoginView {
         confirmPassword = scan.nextLine();
 
 
-        while (!Objects.equals(confirmPassword, password)) {
+
+        while (!Objects.equals(confirmPassword, password)){
             System.out.println("passwords do not match");
             System.out.print("Password2: ");
             password = scan.nextLine();
@@ -79,10 +81,10 @@ public class RegisterAndLoginView {
         System.out.print("Please enter OTP: ");
         String otpMatch = scan.nextLine();
 
-        while (!Objects.equals(otp, otpMatch)) {
+        while (!Objects.equals(otp, otpMatch)){
             System.out.println("Invalid OTP");
             System.out.print("Please enter OTP: ");
-            otpMatch = scan.nextLine();
+             otpMatch = scan.nextLine();
         }
         accountManager.addUser(new Credentials(email, password));
         login();
@@ -96,15 +98,17 @@ public class RegisterAndLoginView {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter");
         System.out.print("Email: ");
-        email = scan.nextLine();
+        email  = scan.nextLine();
         System.out.print("Password: ");
         password = scan.nextLine();
 
         if(accountManager.isUniqueEmail(email)){
             System.out.println("Email does not exist!!");
             signUp();
-        } else if (accountManager.checkPassword(email, password)) {
-            accountManager.updateFile();
+        }
+
+       else if(accountManager.checkPassword(email, password)){
+           accountManager.updateFile();
             toffeeView.start();
         }
        else{
@@ -123,6 +127,7 @@ public class RegisterAndLoginView {
 
 
     }
+
 
 
 }
