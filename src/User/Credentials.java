@@ -1,3 +1,10 @@
+/**
+ * Credentials.java
+ * This class represents the credentials of the user
+ * @see User
+ * @see Account
+ * @auther Nourhan Abdullah
+ */
 package User;
 
 public class Credentials {

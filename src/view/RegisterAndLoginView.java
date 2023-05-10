@@ -1,3 +1,12 @@
+/**
+ * RegisterAndLoginView
+ * This class is used to register and login the user
+ * @see TOFFEEView
+ * @see AccountManager
+ * @see Credentials
+ * @see Customer
+ * @auther Rana Essam & Noor Eyad
+ */
 package view;
 
 import User.AccountManager;
@@ -12,15 +21,20 @@ public class RegisterAndLoginView {
 
     TOFFEEView toffeeView;
     AccountManager accountManager = new AccountManager();
-
-
+    /**
+     * RegisterAndLoginView constructor that takes the toffeeView
+     * @param toffeeView
+     */
     RegisterAndLoginView(TOFFEEView toffeeView) throws IOException {
         this.toffeeView = toffeeView;
         accountManager.loadData();
 
     }
 
-
+    /**
+     * This method is used to start the register and login process
+     * @throws IOException
+     */
     public void start() throws IOException {
         int option ;
         Scanner scan = new Scanner(System.in);
@@ -29,8 +43,6 @@ public class RegisterAndLoginView {
         System.out.println("1. Sign up");
         System.out.println("2. Login " );
         System.out.print("Please pick one option: ");
-
-
 
         option = scan.nextInt();
         if(option == 1){
@@ -41,6 +53,10 @@ public class RegisterAndLoginView {
         }
     }
 
+    /**
+     * This method is used to start the signup view
+     * @throws IOException
+     */
     private  void signUp() throws IOException {
         System.out.println("\n----------Sign up----------");
         Customer customer = new Customer();
@@ -92,6 +108,10 @@ public class RegisterAndLoginView {
 
     }
 
+    /**
+     * This method is used to start the login view
+     * @throws IOException
+     */
     private void login() throws IOException {
         System.out.println("\n----------Login----------");
         String email, password;

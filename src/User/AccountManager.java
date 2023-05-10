@@ -1,3 +1,9 @@
+/**
+ * AccountManager class is responsible for managing the accounts of the users
+ * @auther Nourhan Abdullah
+ * @version 1.0
+ * @since 2021-05-09
+ */
 package User;
 
 import javax.mail.*;
@@ -12,8 +18,22 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class AccountManager {
+    /**
+     * This String represents the path of the file that contains the accounts of the users
+     */
+    private static final String emailReg = "^[\\w-_.+]*[\\w-_.]@([\\w]+\\.)+[\\w]+[\\w]$";
+
+    /**
+     * This HashMap contains the accounts of the users
+     * @see Account
+     */
+    HashMap<String , String> accounts = new HashMap<>();
 
 
+    /**
+     *This method is responsible for generating a random OTP for the user to verify his email
+     * @return otp "One Time Password"
+     */
     private String generateOTP() {
         SecureRandom random = new SecureRandom();
         int otp ;
@@ -25,6 +45,12 @@ public class AccountManager {
         }
         return String.valueOf(otp);
     }
+
+    /**
+     * This method is responsible for sending the OTP to the user's email
+     * @param email
+     * @return otp "One Time Password" to be used for verification
+     */
     public String sendOTP(String email)
     {
         String otp= generateOTP();
@@ -58,21 +84,37 @@ public class AccountManager {
     }
 
 
-    HashMap<String , String> accounts = new HashMap<>();
-    static final int otpLength = 6;
-    private static final String emailReg = "^[\\w-_.+]*[\\w-_.]@([\\w]+\\.)+[\\w]+[\\w]$";
+    /**
+     * This method is responsible for checking if the email is unique or not "already exists"
+     * @param email
+     * @return true if the email is unique and false if it is not
+     */
     public boolean isUniqueEmail(String email){
         return (accounts.get(email) == null);
     }
+
+    /**
+     * This method is responsible for checking if the email is valid or not
+     * @param email
+     * @return true if the email is valid and false if it is not
+     */
     public boolean isValidEmail(String email){
         return Pattern.compile(emailReg).matcher(email).matches();
 
     }
-
+    /**
+     * This method is responsible for adding a new user to the accounts HashMap
+     * @param credentials
+     * @see Credentials
+     */
     public void addUser(Credentials credentials) {
         accounts.put(credentials.getEmail(), credentials.getPassword());
     }
 
+    /**
+     * This method is responsible for loading the data from the file to the accounts HashMap
+     * @throws IOException if the file is not found
+     */
     public void loadData() throws IOException {
         File file2 = new File("customers.txt");
         try {
@@ -109,6 +151,11 @@ public class AccountManager {
 
     }
 
+    /**
+     * This method is responsible for updating the file after adding a new user
+     * @throws IOException if the file is not found
+     */
+
     public void updateFile() throws IOException {
         File file = new File("customers.txt");
         file.delete();
@@ -130,6 +177,12 @@ public class AccountManager {
         outputFile.close();
     }
 
+    /**
+     * This method is responsible for checking if the password is correct or not
+     * @param email
+     * @param password
+     * @return true if the password is correct and false if it is not
+     */
     public boolean checkPassword(String email, String password){
         return Objects.equals(accounts.get(email), password);
     }

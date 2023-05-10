@@ -6,5 +6,4 @@ public class Customer{
     Address address;
     int LoyaltyPoints;
 
-
 }
