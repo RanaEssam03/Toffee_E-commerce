@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/customers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SendEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/User/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/AccountManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TOFFEEView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TOFFEEView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +139,7 @@
       <workItem from="1683574551748" duration="780000" />
       <workItem from="1683635563391" duration="120000" />
       <workItem from="1683635733661" duration="121000" />
+      <workItem from="1683728176376" duration="477000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>

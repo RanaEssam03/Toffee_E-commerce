@@ -103,7 +103,7 @@ public class RegisterAndLoginView {
         password = scan.nextLine();
 
         if(accountManager.isUniqueEmail(email)){
-            System.out.println("Email does not exist ");
+            System.out.println("Email does not exist!!");
             signUp();
         }
 
@@ -114,12 +114,15 @@ public class RegisterAndLoginView {
        else{
            while (!(accountManager.checkPassword(email, password)))
             {
-                System.out.println("Invalid password");
+                System.out.println("Invalid password!!");
 
                 System.out.print("Password: ");
                 password = scan.nextLine();
 
             }
+            toffeeView.start();
+
+
         }
 
 

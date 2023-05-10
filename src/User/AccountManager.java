@@ -12,11 +12,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class AccountManager {
-//    private Credentials credentials;
 
-//    public AccountManager(Credentials credentials) {
-//        this.credentials = credentials;
-//    }
 
     private String generateOTP() {
         SecureRandom random = new SecureRandom();
@@ -48,9 +44,7 @@ public class AccountManager {
 
         try {
             Message message = new MimeMessage(session);
-
             message.setFrom(new InternetAddress(username));
-
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 
             message.setSubject("Toffee Shop Verification Code");
