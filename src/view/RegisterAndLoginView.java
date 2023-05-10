@@ -134,7 +134,7 @@ public class RegisterAndLoginView {
        else{
            while (!(accountManager.checkPassword(email, password)))
             {
-                System.out.println("Invalid password!!");
+                System.out.println("Wrong password!!");
 
                 System.out.print("Password: ");
                 password = scan.nextLine();
