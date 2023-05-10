@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maven/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Maven/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OTP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OTP.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Toffee.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/items.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +102,7 @@
       <recent name="C:\Users\Admin\Documents\GitHub\Toffee_E-commerce" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SendEmail">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Toffee" />
@@ -108,8 +110,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SendEmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SendEmail" />
+      <module name="Toffee" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SendEmail" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -177,7 +187,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/TOFFEE_GUI/RegisterAndLogin.java</url>
           <line>36</line>
-          <properties class="TOFFEE_GUI.RegisterAndLogin" method="signUp">
+          <properties class="TOFFEE_GUI.RegisterAndLogin">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
