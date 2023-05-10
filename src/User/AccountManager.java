@@ -74,7 +74,7 @@ public class AccountManager {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 
             message.setSubject("Toffee Shop Verification Code");
-                message.setText("Dear Customer, Thanks for joining Toffee Shop Family Your OTP is  " + otp+ " .Use this Passcode to verify your email" );
+                message.setText("Dear Customer,\n Thanks for joining Toffee Shop Family Your OTP is  " + otp+ ". Use this Passcode to verify your email." );
 
             Transport.send(message);
             return otp;
