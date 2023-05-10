@@ -52,8 +52,8 @@ public class Order {
     /**
      * Order constructor that takes the id of the order
      * and the id of the customer who made the order
-     * @param id
-     * @param customerId
+     * @param id: id of the order
+     * @param customerId : id of the customer who made the order
      */
     public Order(int id, int customerId) {
         this.id = id;
@@ -74,7 +74,7 @@ public class Order {
 
     /**
      * Setter for address
-     * @param address
+     * @param address : address to which the order will be delivered
      */
     public void setAddress(String address) {
         this.address = address;
@@ -90,7 +90,7 @@ public class Order {
 
     /**
      * Setter for customerId
-     * @param customerId
+     * @param customerId : id of the customer who made the order
      */
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
@@ -106,7 +106,7 @@ public class Order {
 
     /**
      * Setter for cart
-     * @param cart
+     * @param cart : array list of items in the cart
      */
     public void setCart(ArrayList<CartItem> cart) {
         this.cart = cart;
@@ -122,7 +122,7 @@ public class Order {
 
     /**
      * Setter for totalCost
-     * @param totalCost
+     * @param totalCost : total cost of the order
      */
     public void setTotalCost(float totalCost) {
         this.totalCost = totalCost;

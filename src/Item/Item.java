@@ -65,7 +65,7 @@ public class Item {
 
     /**
      * this function is responsible for setting the category of the item
-     * @param category
+     * @param category : category of the item
      */
     public void setCategory(String category) {
         this.category = category;

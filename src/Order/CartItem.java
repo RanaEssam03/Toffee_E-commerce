@@ -40,14 +40,14 @@ public class CartItem {
         return item;
     }
     /**
-     * Setter for item
-     * @param item
+     * Setter for item : set the item
+     * @param item : item to be set
      */
     public void setItem(Item item) {
         this.item = item;
     }
     /**
-     * Getter for quantity
+     * Getter for quantity of the item
      * @return quantity
      */
     public int getQuantity() {
@@ -55,7 +55,7 @@ public class CartItem {
     }
     /**
      * Setter for quantity
-     * @param quantity
+     * @param quantity : quantity to be set
      */
     public void setQuantity(int quantity) {
         this.quantity = quantity;

@@ -40,7 +40,7 @@ public class Category {
 
     /**
      * Category discount setter
-     * @param discount
+     * @param discount : discount percentage
      */
     public void setDiscountPercentage(float discount) {
         discountPercentage = discount;

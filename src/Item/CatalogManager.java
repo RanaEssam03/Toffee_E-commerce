@@ -33,7 +33,7 @@ public class CatalogManager {
     /**
      * this function responsible for set catalog after loading it from the database
      *
-     * @param catalog
+     * @param catalog the catalog of the items
      */
     public void setCatalog(HashMap<Integer, Item> catalog) {
         this.catalog = catalog;
@@ -74,6 +74,7 @@ public class CatalogManager {
     /**
      * this function responsible for load the catalog from the database
      * or create a file with initial values if it does not exist
+     * @throws IOException
      */
     public void loadData() throws IOException {
         File file2 = new File("items.csv");
@@ -150,11 +151,11 @@ public class CatalogManager {
      * This function is responsible for check if the chosen quantity
      * of the user is accepted or not
      *
-     * @param id
-     * @param quantity
-     * @return 1-> quantity available but not accepted,
-     * 2-> quantity available and accepted
-     * 0-> quantity not available and not accepted
+     * @param id      : id of the item
+     * @param quantity : quantity of the item
+     * @return 1 quantity available but not accepted,
+     * 2 quantity available and accepted
+     * 0 quantity not available and not accepted
      */
     public int checkQuantity(int id, int quantity) {
         if (quantity <= catalog.get(id).getQuantity()) {
@@ -173,8 +174,8 @@ public class CatalogManager {
     /**
      * this function decrease the available quantity after being taken by some user
      *
-     * @param id
-     * @param quant
+     * @param id   : id of the item
+     * @param quant : quantity of the item
      */
     public void decreaseQuantity(int id, int quant) {
         int newQuantity = catalog.get(id).getQuantity();
