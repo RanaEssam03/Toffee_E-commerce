@@ -1,7 +1,7 @@
 package User;
 
 
-public class Customer{
+public class Customer {
     String phone;
     Address address;
     int LoyaltyPoints;
