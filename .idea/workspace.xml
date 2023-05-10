@@ -78,7 +78,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Merging integration&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/intro_to_software/assignments/Assignment 3/Toffee_E-commerce&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/data_structure/assignments/Toffee_E-commerce&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -142,6 +142,8 @@
       <workItem from="1683556313520" duration="1148000" />
       <workItem from="1683557495424" duration="3134000" />
       <workItem from="1683574551748" duration="780000" />
+      <workItem from="1683635563391" duration="120000" />
+      <workItem from="1683635733661" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
@@ -178,7 +180,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Item/CatalogManager.java</url>
           <line>45</line>
-          <properties class="Item.CatalogManager" method="loadData">
+          <properties class="Item.CatalogManager" method="setCatalog">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

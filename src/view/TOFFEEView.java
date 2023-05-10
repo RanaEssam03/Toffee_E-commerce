@@ -1,45 +1,46 @@
-package TOFFEE_view;
+package view;
 
 import Item.CatalogManager;
+import Item.Item;
 import Order.Order;
 import Order.OrderManger;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Scanner;
 
-public class TOFFEE {
+public class TOFFEEView {
 
     private CatalogManager catalogManager = new CatalogManager();
+    private RegisterAndLoginView registerAndLoginView;
     private OrderManger orderManger = new OrderManger(catalogManager);
-   private void viewCatalog(){
+
+    public TOFFEEView() throws IOException {
+        registerAndLoginView = new RegisterAndLoginView(this);
+        registerAndLoginView.start();
+    }
+
+    public void viewCatalog(){
+        System.out.println("    -> 0. main menu <-");
+        for(Map.Entry<Integer, Item> set : catalogManager.getCatalog().entrySet()){
+            System.out.print(set.getKey() + "." + set.getValue().getName() + " " + set.getValue().getPrice() + " "
+                    + set.getValue().getQuantity() + " "+ set.getValue().getBrand());
+            System.out.println();
+        }
+        System.out.println("_________________________________________________");
+    }
+   private void shopping() throws IOException {
        Scanner scan = new Scanner(System.in);
        int x;
        Order order = orderManger.creatOrder(5);
-                while (true) {
-                    System.out.println("1. view Catalog");
-                    System.out.println("2. CheckOut");
-
-                    x = scan.nextInt();
-                    System.out.println("_________________________________________________");
-
-                    if(x == 0){
-
-                        break;
-                    }
-                    if(x == 2){
-                        System.out.println("        #Order Checkout#");
-                        orderManger.checkOutOrder();
-                        System.out.println("_________________________________________________");
-
-                        break;
-                    }
 
                     while (true)
                     {
                         System.out.println("Please select itemId to add to cart ");
-                        catalogManager.viewCatalog();
+                      viewCatalog();
                         int id = scan.nextInt();
                         if(id == 0){
+                            checkOut();
                             break;
                         }
                         System.out.print("please select quantity=> ");
@@ -67,15 +68,13 @@ public class TOFFEE {
 
                     }
                 }
-   }
 
-    public  void start() throws IOException {
+    public void start() throws IOException {
 
-        catalogManager.loadData("database.txt");
+        catalogManager.loadData();
         System.out.println("        Welcome to TOFFEE\n\n");
 
-        while (true)
-        {
+        while (true) {
             System.out.println("1.Start Shopping");
             System.out.println("2. Exit");
             Scanner scan = new Scanner(System.in);
@@ -83,15 +82,37 @@ public class TOFFEE {
             int x = scan.nextInt();
             System.out.println("_________________________________________________");
 
-            if(x ==2 ){
+            if (x == 2) {
                 break;
             }
 
-            else if (x == 1) {
-                this.viewCatalog();
+
+            while (true) {
+                System.out.println("1. view Catalog");
+                System.out.println("2. CheckOut");
+                x = scan.nextInt();
+                System.out.println("_________________________________________________");
+
+                if (x == 1) {
+                    shopping();
+                    break;
+                }
+                if (x == 2) {
+                    checkOut();
+                    break;
+                }
 
             }
         }
         System.out.println("SEE YOU SOON");
+
+    }
+
+    void checkOut() throws IOException {
+        System.out.println("        #Order Checkout#");
+        orderManger.checkOutOrder();
+        System.out.println("_________________________________________________");
     }
 }
+
+

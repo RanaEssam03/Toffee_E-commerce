@@ -9,6 +9,14 @@ public class Address {
         String governorate;
         String landMark;
 
+    public Address(String street, String district, BuildingInfo buildingInfo, String governorate, String landMark) {
+        this.street = street;
+        this.district = district;
+        this.buildingInfo = buildingInfo;
+        this.governorate = governorate;
+        this.landMark = landMark;
+    }
+
     public BuildingInfo getBuildingInfo() {
         return buildingInfo;
     }

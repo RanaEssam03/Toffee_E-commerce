@@ -10,9 +10,11 @@ public class Item {
     private Type type;
     private int quantity;
     private int sales;
+
     private ItemStatus status;
+
     /**
-     *
+     * Item constructor
      * @param name : name of the item.
      * @param category : category of the item.
      * @param description : description of the item (ex: ingredients).

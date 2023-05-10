@@ -1,4 +1,4 @@
-import TOFFEE_view.RegisterAndLogin;
+import view.TOFFEEView;
 
 import java.io.IOException;
 
@@ -6,12 +6,12 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-//        Credentials c = new Credentials();
-//        AccountManager u = new AccountManager(c);
-//        u.sendOTP("ranaessam03@gmail.com");
-
-        RegisterAndLogin p = new RegisterAndLogin();
-        p.start();
+        TOFFEEView toffeeView = new TOFFEEView();
+//        Order order = new Order(5, 5);
+//        CatalogManager c = new CatalogManager();
+//        OrderManger manager = new OrderManger(c);
+//        manager.uploadOrders();
 
     }
+
 }

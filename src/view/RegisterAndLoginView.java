@@ -1,19 +1,25 @@
-package TOFFEE_view;
+package view;
 
-import User.Account;
 import User.AccountManager;
 import User.Credentials;
+import User.Customer;
 
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class RegisterAndLogin {
+public class RegisterAndLoginView {
 
-    TOFFEE toffee = new TOFFEE();
+    TOFFEEView toffeeView;
+    AccountManager accountManager = new AccountManager();
 
-    Credentials credentials = new Credentials();
-    AccountManager accountManager = new AccountManager(credentials);
+
+    RegisterAndLoginView(TOFFEEView toffeeView) throws IOException {
+        this.toffeeView = toffeeView;
+        accountManager.loadData();
+
+    }
+
 
     public void start() throws IOException {
         int option ;
@@ -34,19 +40,20 @@ public class RegisterAndLogin {
     }
 
     private  void signUp() throws IOException {
+        Customer customer = new Customer();
         Scanner scan = new Scanner(System.in);
 
         String email , password, confirmPassword;
         System.out.print("Please enter your email: ");
         email= scan.nextLine();
-        while (!credentials.isValidEmail(email)){
+        while (!accountManager.isValidEmail(email)){
             System.out.println("Invalid Email");
             System.out.print("Please enter your email: ");
             email= scan.nextLine();
         }
-        if (!credentials.isUniqueEmail(email)){
+        if (!accountManager.isUniqueEmail(email)){
             System.out.println("You already have an account !");
-            // TODO call login fun
+            login();
         }
 
         System.out.print("Password: ");
@@ -54,6 +61,8 @@ public class RegisterAndLogin {
 
         System.out.print("Confirm Password: ");
         confirmPassword = scan.nextLine();
+
+
 
         while (!Objects.equals(confirmPassword, password)){
             System.out.println("passwords do not match");
@@ -72,7 +81,7 @@ public class RegisterAndLogin {
             System.out.print("Please enter OTP: ");
              otpMatch = scan.nextLine();
         }
-        credentials.addUser(new Account(email, password));
+        accountManager.addUser(new Credentials(email, password));
         login();
 
     }
@@ -86,16 +95,17 @@ public class RegisterAndLogin {
         System.out.print("Password: ");
         password = scan.nextLine();
 
-        if(credentials.isUniqueEmail(email)){
+        if(accountManager.isUniqueEmail(email)){
             System.out.println("Email does not exist ");
             signUp();
         }
 
-       else if(credentials.checkPassword(email, password)){
-            toffee.start();
+       else if(accountManager.checkPassword(email, password)){
+           accountManager.updateFile();
+            toffeeView.start();
         }
        else{
-           while (!(credentials.checkPassword(email, password)))
+           while (!(accountManager.checkPassword(email, password)))
             {
                 System.out.println("Invalid password");
 
@@ -111,18 +121,3 @@ public class RegisterAndLogin {
 
 
 }
-
-
-//public class Test {
-//
-//    public static void main(final String[] args) throws Exception {
-//        ConsoleReader reader = new ConsoleReader();
-//        Character mask = '*';
-//        String line = null;
-//        do {
-//            line = reader.readLine("Enter Password(blank pwd to exit)> ", mask);
-//            System.out.println("Got password: " + line);
-//        } while (line != null && line.length() > 0);
-//    }
-//
-//}
