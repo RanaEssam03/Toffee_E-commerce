@@ -102,7 +102,7 @@ public class RegisterAndLoginView {
             System.out.print("Please enter OTP: ");
              otpMatch = scan.nextLine();
         }
-        accountManager.addUser(new Credentials(email, password));
+        accountManager.addCustomer(new Credentials(email, password));
         login();
 
 

@@ -100,14 +100,13 @@ public class AccountManager {
      */
     public boolean isValidEmail(String email){
         return Pattern.compile(emailReg).matcher(email).matches();
-
     }
     /**
      * This method is responsible for adding a new user to the accounts HashMap
      * @param credentials
      * @see Credentials
      */
-    public void addUser(Credentials credentials) {
+    public void addCustomer(Credentials credentials) {
         accounts.put(credentials.getEmail(), credentials.getPassword());
     }
 

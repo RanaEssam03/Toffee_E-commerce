@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp.bak_005d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp.bak_006d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VP/Class Diagram.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/customers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/User/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/AccountManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/BuildingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/BuildingInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +81,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Merging integration&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/data_structure/assignments/Toffee_E-commerce&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/intro_to_software/untitled&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -137,6 +148,7 @@
       <workItem from="1683635563391" duration="120000" />
       <workItem from="1683635733661" duration="121000" />
       <workItem from="1683728176376" duration="477000" />
+      <workItem from="1683747231817" duration="4533000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
@@ -172,7 +184,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Item/CatalogManager.java</url>
-          <line>56</line>
+          <line>71</line>
           <properties class="Item.CatalogManager" method="getItemId">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -187,6 +199,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Order/OrderManger.java</url>
+          <line>95</line>
+          <properties class="Order.OrderManger" method="checkOutOrder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NumberFormatException" package="java.lang" />

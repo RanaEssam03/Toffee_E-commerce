@@ -1,6 +1,8 @@
-/** This file integrates the catalog with items and contains
+/**
+ * This file integrates the catalog with items and contains
  * all the functions related to Catalog control
  * @auther Noor Eyad
+ * @version 1.0
  */
 
 package Item;
@@ -15,8 +17,16 @@ import java.util.*;
 
 public class CatalogManager {
 
+    /**
+     * this int represents the id of the item
+     */
     private int itemID;
 
+    /**
+     * this HashMap contains the items in the catalog
+     *
+     * @see Item
+     */
     private HashMap<Integer, Item> catalog = new HashMap<>();
 
     /**
@@ -26,6 +36,11 @@ public class CatalogManager {
         itemID = 0;
     }
 
+    /**
+     * catalog getter
+     *
+     * @return the catalog of the items
+     */
     public HashMap<Integer, Item> getCatalog() {
         return catalog;
     }
@@ -74,6 +89,7 @@ public class CatalogManager {
     /**
      * this function responsible for load the catalog from the database
      * or create a file with initial values if it does not exist
+     *
      * @throws IOException
      */
     public void loadData() throws IOException {
@@ -113,8 +129,6 @@ public class CatalogManager {
             writer.writeAll(data);
             writer.close();
             loadData();
-            //TODO create catalog file
-
         }
     }
 
@@ -151,7 +165,7 @@ public class CatalogManager {
      * This function is responsible for check if the chosen quantity
      * of the user is accepted or not
      *
-     * @param id      : id of the item
+     * @param id       : id of the item
      * @param quantity : quantity of the item
      * @return 1 quantity available but not accepted,
      * 2 quantity available and accepted
@@ -174,7 +188,7 @@ public class CatalogManager {
     /**
      * this function decrease the available quantity after being taken by some user
      *
-     * @param id   : id of the item
+     * @param id    : id of the item
      * @param quant : quantity of the item
      */
     public void decreaseQuantity(int id, int quant) {
@@ -186,23 +200,4 @@ public class CatalogManager {
 
     // TODO overwrite function
     //
-//    public static void generateCsvFile(String fileName, HashMap<Integer, Item> cat){
-//        try{
-//            FileWriter writer = new FileWriter(fileName);
-//            for (Map.Entry<Integer, Item> set: cat.entrySet()){
-//
-//            }
-//        }
-//        catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
-
-    //lazem a7awel kol el 7agat eli fe el hashmap le strings 3shan a3rf a overwrite
 }
-
-
-//                Collections.addAll(strings, nextRecord);
-//                int id = Integer.parseInt(strings.get(0));
-

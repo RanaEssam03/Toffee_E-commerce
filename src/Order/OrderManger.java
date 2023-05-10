@@ -34,7 +34,7 @@ public class OrderManger {
     /**
      * This int represents the id of the order
      */
-    private int orderId;
+    private static int orderId;
 
     /**
      * OrderManger constructor that takes the catalog manager
@@ -78,8 +78,8 @@ public class OrderManger {
 
     /**
      * This method is responsible for creating an order
-     * @param customerId
-     * @return order
+     * @param customerId : id of the customer who made the order
+     * @return order : the order that was created
      */
     public Order creatOrder(int customerId) {
         ++orderId;
@@ -95,7 +95,7 @@ public class OrderManger {
      */
     public void checkOutOrder() throws IOException {
         Order currentOrder = orders.get(orderId);
-        if (currentOrder.getCart().size() == 0) {
+        if (currentOrder== null) {
             System.out.println("CART IS EMPTY!");
             return;
         }
@@ -115,7 +115,7 @@ public class OrderManger {
 
     /**
      * This method is responsible for uploading the orders to the file
-     * @throws IOException
+     * @throws IOException : if the file is not found
      */
     public void uploadOrders() throws IOException {
 
@@ -132,7 +132,6 @@ public class OrderManger {
 
         }
         outputFile.close();
-
 
     }
 

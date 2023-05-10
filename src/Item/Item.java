@@ -7,6 +7,7 @@
 package Item;
 
 public class Item {
+
     private String name;
     private String category;
     private String description;
