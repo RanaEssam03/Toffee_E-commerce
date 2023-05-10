@@ -25,10 +25,12 @@ public class RegisterAndLoginView {
         int option ;
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("            Welcome to TOFFEE");
-        System.out.println("Please pick one option ");
+        System.out.println("      ->Welcome to TOFFEE<-");
         System.out.println("1. Sign up");
         System.out.println("2. Login " );
+        System.out.print("Please pick one option: ");
+
+
 
         option = scan.nextInt();
         if(option == 1){
@@ -40,11 +42,13 @@ public class RegisterAndLoginView {
     }
 
     private  void signUp() throws IOException {
+        System.out.println("\n----------Sign up----------");
         Customer customer = new Customer();
         Scanner scan = new Scanner(System.in);
 
         String email , password, confirmPassword;
-        System.out.print("Please enter your email: ");
+        System.out.println("Please enter");
+        System.out.print("Email: ");
         email= scan.nextLine();
         while (!accountManager.isValidEmail(email)){
             System.out.println("Invalid Email");
@@ -54,6 +58,7 @@ public class RegisterAndLoginView {
         if (!accountManager.isUniqueEmail(email)){
             System.out.println("You already have an account !");
             login();
+            return;
         }
 
         System.out.print("Password: ");
@@ -66,7 +71,7 @@ public class RegisterAndLoginView {
 
         while (!Objects.equals(confirmPassword, password)){
             System.out.println("passwords do not match");
-            System.out.print("Password: ");
+            System.out.print("Password2: ");
             password = scan.nextLine();
             System.out.print("Confirm Password: ");
             confirmPassword = scan.nextLine();
@@ -84,12 +89,14 @@ public class RegisterAndLoginView {
         accountManager.addUser(new Credentials(email, password));
         login();
 
+
     }
 
     private void login() throws IOException {
+        System.out.println("\n----------Login----------");
         String email, password;
         Scanner scan = new Scanner(System.in);
-        System.out.println("    Please enter");
+        System.out.println("Please enter");
         System.out.print("Email: ");
         email  = scan.nextLine();
         System.out.print("Password: ");

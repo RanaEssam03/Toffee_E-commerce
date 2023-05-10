@@ -1,5 +1,8 @@
 package User;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -26,14 +29,40 @@ public class AccountManager {
         }
         return String.valueOf(otp);
     }
-    public String sendOTP(String email) throws IOException {
-            String otp = generateOTP();
-            File file = new File("OTP.txt");
-            FileWriter outputFile = new FileWriter(file);
-            outputFile.write(otp);
-            outputFile.close();
+    public String sendOTP(String email)
+    {
+        String otp= generateOTP();
+        String host = "smtp.gmail.com";
+        String username = "toffeteam@gmail.com";
+        String password = "jhhtcvpiahbqekap";
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+
+            message.setFrom(new InternetAddress(username));
+
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+
+            message.setSubject("Toffee Shop Verification Code");
+                message.setText("Dear Customer, Thanks for joining Toffee Shop Family Your OTP is  " + otp+ " .Use this Passcode to verify your email" );
+
+            Transport.send(message);
             return otp;
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
     HashMap<String , String> accounts = new HashMap<>();
     static final int otpLength = 6;

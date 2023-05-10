@@ -21,7 +21,6 @@ public class TOFFEEView {
     }
 
     public void viewCatalog(){
-        System.out.println("    -> 0. main menu <-");
         for(Map.Entry<Integer, Item> set : catalogManager.getCatalog().entrySet()){
             System.out.print(set.getKey() + "." + set.getValue().getName() + " " + set.getValue().getPrice() + " "
                     + set.getValue().getQuantity() + " "+ set.getValue().getBrand());
@@ -36,12 +35,13 @@ public class TOFFEEView {
 
                     while (true)
                     {
-                        System.out.println("Please select itemId to add to cart ");
+                        System.out.println("\n___________Catalog__________ ");
                       viewCatalog();
+                        System.out.print("___enter item id Or 0 to main menu : ");
+
                         int id = scan.nextInt();
                         if(id == 0){
-                            checkOut();
-                            break;
+                            return;
                         }
                         System.out.print("please select quantity=> ");
                         int quantity = scan.nextInt();
@@ -72,15 +72,14 @@ public class TOFFEEView {
     public void start() throws IOException {
 
         catalogManager.loadData();
-        System.out.println("        Welcome to TOFFEE\n\n");
+        System.out.println("\n----------Welcome to TOFFEE----------\n");
 
         while (true) {
             System.out.println("1.Start Shopping");
             System.out.println("2. Exit");
             Scanner scan = new Scanner(System.in);
-
+            System.out.print("___pick one option: ");
             int x = scan.nextInt();
-            System.out.println("_________________________________________________");
 
             if (x == 2) {
                 break;
@@ -88,14 +87,14 @@ public class TOFFEEView {
 
 
             while (true) {
+                System.out.println("\n___________Main Menu__________ ");
                 System.out.println("1. view Catalog");
                 System.out.println("2. CheckOut");
+                System.out.print("___pick one option:");
                 x = scan.nextInt();
-                System.out.println("_________________________________________________");
 
                 if (x == 1) {
                     shopping();
-                    break;
                 }
                 if (x == 2) {
                     checkOut();
@@ -104,14 +103,12 @@ public class TOFFEEView {
 
             }
         }
-        System.out.println("SEE YOU SOON");
-
+        System.out.println("\n____________SEE YOU SOON________________");
     }
 
     void checkOut() throws IOException {
-        System.out.println("        #Order Checkout#");
+        System.out.println("------------Order Checkout------------");
         orderManger.checkOutOrder();
-        System.out.println("_________________________________________________");
     }
 }
 
