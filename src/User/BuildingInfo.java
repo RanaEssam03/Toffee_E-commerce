@@ -1,9 +1,9 @@
 package User;
 
 public class BuildingInfo {
+    private int number;
     int floor;
     int flat;
-    private int number;
 
     public int getNumber() {
         return number;

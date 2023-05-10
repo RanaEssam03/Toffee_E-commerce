@@ -1,11 +1,13 @@
 package User;
 
 public class Address {
-    String governorate;
-    String landMark;
-    private String street;
-    private String district;
-    private BuildingInfo buildingInfo;
+        private String street;
+        private String district;
+
+        private BuildingInfo buildingInfo;
+
+        String governorate;
+        String landMark;
 
     public Address(String street, String district, BuildingInfo buildingInfo, String governorate, String landMark) {
         this.street = street;
@@ -13,11 +15,6 @@ public class Address {
         this.buildingInfo = buildingInfo;
         this.governorate = governorate;
         this.landMark = landMark;
-    }
-
-    public Address(String street, String city) {
-        this.street = street;
-        this.district = city;
     }
 
     public BuildingInfo getBuildingInfo() {
@@ -44,23 +41,28 @@ public class Address {
         this.landMark = landMark;
     }
 
-    // Getters
-    public String getStreet() {
+    public Address(String street, String city) {
+            this.street = street;
+            this.district = city;
+        }
+
+        // Setters
+        public void setStreet(String street) {
+            this.street = street;
+        }
+
+        public void setDistrict(String district) {
+            this.district = district;
+        }
+
+       // Getters
+       public String getStreet() {
         return street;
-    }
+       }
 
-    // Setters
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
+       public String getDistrict() {
+       return district;
+       }
 
 
 }
