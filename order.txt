@@ -1,0 +1,5 @@
+1,[],0.0,outForDelivery,Street: 1
+District: 1
+Governorate: 1
+Building Info: Building Number: 1 Floor: 1 Flat: 1,0
+Total= 20.0

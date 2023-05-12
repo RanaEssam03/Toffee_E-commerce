@@ -25,12 +25,22 @@ public class TOFFEEView {
      * This CatalogManager object is used to manage the catalog
      * @see CatalogManager
      */
+    int customerId ;
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
     private final CatalogManager catalogManager = new CatalogManager();
     /**
      * This RegisterAndLoginView object is used to manage the register and login process
-     * @see RegisterAndLoginView
+     * @see LoginView
      */
-    private final RegisterAndLoginView registerAndLoginView;
+    private final LoginView registerAndLoginView;
     /**
      * This OrderManger object is used to manage the order process
      * @see OrderManger
@@ -42,7 +52,7 @@ public class TOFFEEView {
      * @throws IOException
      */
     public TOFFEEView() throws IOException {
-        registerAndLoginView = new RegisterAndLoginView(this);
+        registerAndLoginView = new LoginView(this);
         registerAndLoginView.start();
     }
 
@@ -51,9 +61,12 @@ public class TOFFEEView {
      * @throws IOException
      */
     public void viewCatalog() {
+        System.out.printf("| %-3s | %-15s | %5s| %5s |%n", "ID", "NAME", "PRICE","Available Quantity","Brand" );
+        System.out.printf("--------------------------------%n");
+
         for (Map.Entry<Integer, Item> set : catalogManager.getCatalog().entrySet()) {
-            System.out.print(set.getKey() + "." + set.getValue().getName() + " " + set.getValue().getPrice() + " "
-                    + set.getValue().getQuantity() + " " + set.getValue().getBrand());
+            System.out.printf("| %-3s | %-15s | %5s| %5s |%n",set.getKey().toString() , set.getValue().getName().toString(),
+                    set.getValue().getQuantity(),set.getValue().getPrice() ,set.getValue().getBrand());
             System.out.println();
         }
         System.out.println("_________________________________________________");
@@ -66,7 +79,7 @@ public class TOFFEEView {
     private void shopping() throws IOException {
         Scanner scan = new Scanner(System.in);
         int x;
-        Order order = orderManger.creatOrder(5);
+        Order order = orderManger.creatOrder(getCustomerId());
 
         while (true) {
             System.out.println("\n___________Catalog__________ ");

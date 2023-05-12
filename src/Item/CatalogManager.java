@@ -198,6 +198,5 @@ public class CatalogManager {
     }
 
 
-    // TODO overwrite function
-    //
+
 }

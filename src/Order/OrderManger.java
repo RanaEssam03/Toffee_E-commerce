@@ -12,6 +12,8 @@
 package Order;
 
 import Item.CatalogManager;
+import User.Address;
+import User.BuildingInfo;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -25,19 +27,21 @@ public class OrderManger {
     /**
      * This int represents the id of the order
      */
-    private final CatalogManager catalog;
-    /**
-     * This HashMap contains the orders of the users
-     * @see Order
-     */
-    private HashMap<Integer, Order> orders = new HashMap<>();
+    private static int orderId;
     /**
      * This int represents the id of the order
      */
-    private static int orderId;
+    private final CatalogManager catalog;
+    /**
+     * This HashMap contains the orders of the users
+     *
+     * @see Order
+     */
+    private HashMap<Integer, Order> orders = new HashMap<>();
 
     /**
      * OrderManger constructor that takes the catalog manager
+     *
      * @param catalog
      */
     public OrderManger(CatalogManager catalog) {
@@ -46,6 +50,7 @@ public class OrderManger {
 
     /**
      * Getter for orders
+     *
      * @return orders
      */
     public HashMap<Integer, Order> getOrders() {
@@ -54,6 +59,7 @@ public class OrderManger {
 
     /**
      * Setter for orders
+     *
      * @param orders
      */
     public void setOrders(HashMap<Integer, Order> orders) {
@@ -62,6 +68,7 @@ public class OrderManger {
 
     /**
      * Getter for the order id
+     *
      * @return orderId
      */
     public int getOrderId() {
@@ -70,14 +77,16 @@ public class OrderManger {
 
     /**
      * Setter for the order id
+     *
      * @param orderId
      */
     public void setOrderId(int orderId) {
-        this.orderId = orderId;
+        OrderManger.orderId = orderId;
     }
 
     /**
      * This method is responsible for creating an order
+     *
      * @param customerId : id of the customer who made the order
      * @return order : the order that was created
      */
@@ -91,40 +100,59 @@ public class OrderManger {
     /**
      * This method is responsible for checking out the order and the payment process
      * and the delivery process
+     *
      * @throws IOException
      */
     public void checkOutOrder() throws IOException {
         Order currentOrder = orders.get(orderId);
-        if (currentOrder== null) {
+        if (currentOrder.getTotalCost() == 20) {
             System.out.println("CART IS EMPTY!");
+            System.out.println("-----------------------------------------");
             return;
         }
         System.out.println("Please enter Your Address");
         Scanner myObj = new Scanner(System.in);
-        currentOrder.setAddress(myObj.nextLine());
+        String street, city, gov, number, floor, flat;
+        System.out.print("Street: ");
+        street = myObj.nextLine();
+        System.out.print("City: ");
+        city = myObj.nextLine();
+        System.out.print("Governorate: ");
+        gov = myObj.nextLine();
+        System.out.print("Building Number: ");
+        number = myObj.nextLine();
+        System.out.print("Floor: ");
+        floor = myObj.nextLine();
+        System.out.print("Flat: ");
+        flat = myObj.nextLine();
+
+        currentOrder.setAddress(new Address(street, city, gov, new BuildingInfo(number, floor, flat)));
         System.out.println("Total = " + currentOrder.getTotalCost());
-        boolean flag = true;
-        System.out.println("Confirm Order?\n 1.No\n2.Yes");
+        System.out.println("Confirm Order?\n1.Yes\n2.No");
+        System.out.println("-----------------------------------------");
+
         int option = myObj.nextInt();
-        if (option == 1) {
+        if (option == 2) {
             currentOrder.setState(State.outForDelivery);
+            orders.put(orderId, currentOrder);
             uploadOrders();
+        } else {
+            currentOrder.setState(State.delivered);
         }
-        orders.put(orderId, currentOrder);
     }
 
     /**
      * This method is responsible for uploading the orders to the file
+     *
      * @throws IOException : if the file is not found
      */
     public void uploadOrders() throws IOException {
 
         File file = new File("orders.txt");
-        file.delete();
-
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         FileWriter outputFile = new FileWriter("order.txt");
-        int x = 0;
-
 
         for (Map.Entry<Integer, Order> set : orders.entrySet()) {
 

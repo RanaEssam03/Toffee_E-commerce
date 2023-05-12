@@ -13,6 +13,7 @@
 package Order;
 
 import Item.Item;
+import User.Address;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class Order {
     /**
      *  This string represents the address to which the order will be delivered
      */
-    private String address;
+    private Address address;
     /**
      *  This int represents the id of the customer who made the order
      */
@@ -68,7 +69,7 @@ public class Order {
      * Getter for address
      * @return address
      */
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -76,7 +77,7 @@ public class Order {
      * Setter for address
      * @param address : address to which the order will be delivered
      */
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -117,7 +118,7 @@ public class Order {
      * @return totalCost
      */
     public float getTotalCost() {
-        return totalCost;
+        return totalCost + 20;
     }
 
     /**
@@ -174,6 +175,7 @@ public class Order {
      * @param id
      */
     public void setId(int id) {
+
         this.id = id;
     }
 
@@ -193,6 +195,7 @@ public class Order {
      * @return loyalty points
      */
     public int getGainedLoyaltyPts() {
+
         return (int) (totalCost * 0.2);
     }
 
@@ -202,7 +205,7 @@ public class Order {
      */
     public String toString() {
         return id + "," + cart.toString() + "," + this.totalCost + "," + this.state + ","
-                + this.address + "," + this.customerId;
+                + this.address + "," + this.customerId + "\nTotal= "+ getTotalCost();
 
     }
 }

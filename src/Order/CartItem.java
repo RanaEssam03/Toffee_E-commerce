@@ -60,4 +60,8 @@ public class CartItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public String toString() {
+        return "Item: " + item.getName() + " Quantity: " + quantity;
+    }
 }

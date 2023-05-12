@@ -6,15 +6,9 @@
  */
 package User;
 
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class AccountManager {
@@ -24,63 +18,68 @@ public class AccountManager {
     private static final String emailReg = "^[\\w-_.+]*[\\w-_.]@([\\w]+\\.)+[\\w]+[\\w]$";
 
     /**
-     * This HashMap contains the accounts of the users
-     * @see Account
+     * This HashMap contains the accounts of the users with their passwords
+     * @see Customer
      */
-    HashMap<String , String> accounts = new HashMap<>();
+   private HashMap<String , String> accounts = new HashMap<>();
+   private ArrayList<Customer> customers = new ArrayList<>();
+    private int accountID;
+    FileHandler fileHandler;
 
+    OTPHandler otpHandler = new OTPHandler();
 
-    /**
-     *This method is responsible for generating a random OTP for the user to verify his email
-     * @return otp "One Time Password"
-     */
-    private String generateOTP() {
-        SecureRandom random = new SecureRandom();
-        int otp ;
-        int upperbound = 999;
-        otp =  random.nextInt(upperbound);
-        while (otp < 100){
-            otp =  random.nextInt(upperbound);
-
-        }
-        return String.valueOf(otp);
+    public FileHandler getFileHandler() {
+        return fileHandler;
     }
 
-    /**
-     * This method is responsible for sending the OTP to the user's email
-     * @param email
-     * @return otp "One Time Password" to be used for verification
-     */
-    public String sendOTP(String email)
-    {
-        String otp= generateOTP();
-        String host = "smtp.gmail.com";
-        String username = "toffeteam@gmail.com";
-        String password = "jhhtcvpiahbqekap";
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "587");
-        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
+    public void setFileHandler(FileHandler fileHandler) {
+        this.fileHandler = fileHandler;
+    }
+
+    public AccountManager(){
+        fileHandler = new FileHandler(this);
+    }
+
+    public OTPHandler getOtpHandler() {
+        return otpHandler;
+    }
+
+    public void setOtpHandler(OTPHandler otpHandler) {
+        this.otpHandler = otpHandler;
+    }
+
+    public int getAccountID() {
+        return accountID;
+    }
+
+    public HashMap<String, String> getAccounts() {
+        return accounts;
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
+    }
+
+    public void setAccounts(HashMap<String, String> accounts) {
+        this.accounts = accounts;
+    }
+
+    public int getId(String email){
+        for(int i = 0 ; i < customers.size() ; i++){
+            if(Objects.equals(customers.get(i).getCredentials().getEmail(), email)){
+                return customers.get(i).getCustomerId();
             }
-        });
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-
-            message.setSubject("Toffee Shop Verification Code");
-                message.setText("Dear Customer,\n Thanks for joining Toffee Shop Family Your OTP is  " + otp+ ". Use this Passcode to verify your email." );
-
-            Transport.send(message);
-            return otp;
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
         }
+        return 0;
+    }
+
+
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
     }
 
 
@@ -106,75 +105,13 @@ public class AccountManager {
      * @param credentials
      * @see Credentials
      */
-    public void addCustomer(Credentials credentials) {
+    public int addCustomer(Credentials credentials, String phone) {
         accounts.put(credentials.getEmail(), credentials.getPassword());
+        int id = ++accountID;
+        customers.add(new Customer(credentials, phone, id));
+        return id;
     }
 
-    /**
-     * This method is responsible for loading the data from the file to the accounts HashMap
-     * @throws IOException if the file is not found
-     */
-    public void loadData() throws IOException {
-        File file2 = new File("customers.txt");
-        try {
-            FileReader fileReader = new FileReader(file2);
-            Scanner sc = new Scanner(new File(file2.toURI()));
-            sc.useDelimiter(",");
-
-            while (sc.hasNext()){
-                ArrayList<String> strings = new ArrayList<>();
-                int x = 2;
-                int y = 0;
-                while(x!=0){
-
-                    String s = sc.next();
-                    ((ArrayList<String>) strings).add(s);
-                    x--;
-                }
-                accounts.put(strings.get(0), strings.get(1));
-            }
-
-        }
-        catch (IOException e) {
-            FileWriter outputFile = new FileWriter(file2);
-
-            List<String[]> data = new ArrayList<>();
-            int x = data.size();
-            int j = 0;
-                outputFile.write("ranaessam03@gmail.com,");
-                outputFile.write("Rana2003,");
-                outputFile.write("noorEyad@gmail.com,");
-                outputFile.write("Noor2003");
-            outputFile.close();
-        }
-
-    }
-
-    /**
-     * This method is responsible for updating the file after adding a new user
-     * @throws IOException if the file is not found
-     */
-
-    public void updateFile() throws IOException {
-        File file = new File("customers.txt");
-        file.delete();
-
-        FileWriter outputFile = new FileWriter("customers.txt");
-        int x = 0;
-
-
-        for (Map.Entry<String, String> set : accounts.entrySet()){
-
-            outputFile.write(set.getKey()+",");
-            if(x == accounts.size()-1) {
-                outputFile.write(set.getValue());
-                break;
-            }
-            outputFile.write( set.getValue()+",");
-            x++;
-        }
-        outputFile.close();
-    }
 
     /**
      * This method is responsible for checking if the password is correct or not
@@ -185,6 +122,7 @@ public class AccountManager {
     public boolean checkPassword(String email, String password){
         return Objects.equals(accounts.get(email), password);
     }
+
 
 
 }
