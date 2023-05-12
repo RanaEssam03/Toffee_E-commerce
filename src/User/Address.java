@@ -7,7 +7,7 @@ public class Address {
         private String street;
 
         /**
-            * This String represents the district of the user
+         * This String represents the district of the user
          */
         private String district;
     /**
