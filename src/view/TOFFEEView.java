@@ -151,7 +151,6 @@ public class TOFFEEView {
                     checkOut();
                     break;
                 }
-
             }
         }
         System.out.println("\n____________SEE YOU SOON________________");
