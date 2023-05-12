@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp.bak_008d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User/FileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User/OTPHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/SignUpView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VP/.Class Diagram.vpp.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp.bak_009d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VP/Class Diagram.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/VP/Class Diagram.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/customers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/BuildingInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/BuildingInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Credentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/RegisterAndLoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TOFFEEView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TOFFEEView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +143,7 @@
       <workItem from="1683747231817" duration="6426000" />
       <workItem from="1683829806759" duration="1302000" />
       <workItem from="1683905631685" duration="606000" />
-      <workItem from="1683921490403" duration="6978000" />
+      <workItem from="1683921490403" duration="7789000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
