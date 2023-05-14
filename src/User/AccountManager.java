@@ -92,6 +92,10 @@ public class AccountManager {
         return (accounts.get(email) == null);
     }
 
+    public boolean isValidPhone(String phone){
+        return phone.matches("[0-9]+") && phone.length() == 11;
+    }
+
     /**
      * This method is responsible for checking if the email is valid or not
      * @param email
@@ -122,6 +126,7 @@ public class AccountManager {
     public boolean checkPassword(String email, String password){
         return Objects.equals(accounts.get(email), password);
     }
+
 
 
 

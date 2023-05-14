@@ -105,9 +105,8 @@ public class OrderManger {
      */
     public void checkOutOrder() throws IOException {
         Order currentOrder = orders.get(orderId);
-        if (currentOrder.getTotalCost() == 20) {
+        if (currentOrder == null|| currentOrder.getTotalCost() == 20) {
             System.out.println("CART IS EMPTY!");
-            System.out.println("-----------------------------------------");
             return;
         }
         System.out.println("Please enter Your Address");
@@ -128,17 +127,24 @@ public class OrderManger {
 
         currentOrder.setAddress(new Address(street, city, gov, new BuildingInfo(number, floor, flat)));
         System.out.println("Total = " + currentOrder.getTotalCost());
-        System.out.println("Confirm Order?\n1.Yes\n2.No");
         System.out.println("-----------------------------------------");
+        System.out.println("Confirm Order?\n1.Yes\n2.No");
 
-        int option = myObj.nextInt();
-        if (option == 2) {
+
+        String option = myObj.next();
+        while(!option.equals("1") && !option.equals("2")) {
+            System.out.println("Invalid Input!");
+            System.out.println("Confirm Order?\n1.Yes\n2.No");
+            option = myObj.next();
+        }
+        if (option.equals("1")) {
             currentOrder.setState(State.outForDelivery);
-            orders.put(orderId, currentOrder);
             uploadOrders();
+            orders.put(orderId, currentOrder);
         } else {
             currentOrder.setState(State.delivered);
         }
+
     }
 
     /**
@@ -147,8 +153,8 @@ public class OrderManger {
      * @throws IOException : if the file is not found
      */
     public void uploadOrders() throws IOException {
-
-        File file = new File("orders.txt");
+        System.out.println("Saving Order...");
+        File file = new File("order.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -156,7 +162,7 @@ public class OrderManger {
 
         for (Map.Entry<Integer, Order> set : orders.entrySet()) {
 
-            outputFile.write(set.getValue() + "\n");
+            outputFile.append(set.getValue() + "\n");
 
         }
         outputFile.close();

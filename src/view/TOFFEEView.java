@@ -17,23 +17,12 @@ import Order.OrderManger;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class TOFFEEView {
-
-    /**
-     * This CatalogManager object is used to manage the catalog
-     * @see CatalogManager
-     */
-    int customerId ;
-
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
 
     private final CatalogManager catalogManager = new CatalogManager();
     /**
@@ -46,7 +35,11 @@ public class TOFFEEView {
      * @see OrderManger
      */
     private final OrderManger orderManger = new OrderManger(catalogManager);
-
+    /**
+     * This CatalogManager object is used to manage the catalog
+     * @see CatalogManager
+     */
+    int customerId ;
     /**
      * TOFFEEView constructor that starts the register and login process
      * @throws IOException
@@ -54,6 +47,14 @@ public class TOFFEEView {
     public TOFFEEView() throws IOException {
         registerAndLoginView = new LoginView(this);
         registerAndLoginView.start();
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     /**
@@ -66,7 +67,7 @@ public class TOFFEEView {
 
         for (Map.Entry<Integer, Item> set : catalogManager.getCatalog().entrySet()) {
             System.out.printf("| %-3s | %-15s | %5s| %5s |%n",set.getKey().toString() , set.getValue().getName().toString(),
-                    set.getValue().getQuantity(),set.getValue().getPrice() ,set.getValue().getBrand());
+                    set.getValue().getPrice(), set.getValue().getQuantity() ,set.getValue().getBrand());
             System.out.println();
         }
         System.out.println("_________________________________________________");
@@ -85,32 +86,53 @@ public class TOFFEEView {
             System.out.println("\n___________Catalog__________ ");
             viewCatalog();
             System.out.print("___enter item id Or 0 to main menu : ");
-
             int id = scan.nextInt();
+            while ( id < 0 || id > catalogManager.getCatalog().size()) {
+                System.out.print("please enter a valid id 0R 0 to main menu=> ");
+                id = scan.nextInt();
+            }
+
+
             if (id == 0) {
                 return;
             }
             System.out.print("please select quantity=> ");
-            int quantity = scan.nextInt();
-            int check = catalogManager.checkQuantity(id, quantity);
+            String quantity = scan.next();
+            while (!quantity.matches("[0-9]+")) {
+                System.out.print("please enter a valid quantity=> ");
+                quantity = scan.next();
+            }
+            int check = catalogManager.checkQuantity(id, parseInt(quantity));
             while (check == 1) {
                 System.out.print("The Limit is 50, please change the quantity entered: ");
-                quantity = scan.nextInt();
-                check = catalogManager.checkQuantity(id, quantity);
+                 quantity = scan.next();
+                while (!quantity.matches("[0-9]+")) {
+                    System.out.print("please enter a valid quantity=> ");
+                    quantity = scan.next();
+                }
+                check = catalogManager.checkQuantity(id, parseInt(quantity));
             }
             while (check != 2) {
                 System.out.print("The quantity available is:" + check +
                         ", please choose within available quantity: ");
-                quantity = scan.nextInt();
-                check = catalogManager.checkQuantity(id, quantity);
+                quantity = scan.next();
+                while (!quantity.matches("[0-9]+")) {
+                    System.out.print("please enter a valid quantity=> ");
+                    quantity = scan.next();
+                }
+                check = catalogManager.checkQuantity(id, parseInt(quantity));
                 while (check == 1) {
                     System.out.print("The Limit is 50, please change the quantity entered: ");
-                    quantity = scan.nextInt();
-                    check = catalogManager.checkQuantity(id, quantity);
+                       quantity = scan.next();
+                    while (!quantity.matches("[0-9]+")) {
+                        System.out.print("please enter a valid quantity=> ");
+                        quantity = scan.next();
+                    }
+                    check = catalogManager.checkQuantity(id, parseInt(quantity));
                 }
             }
-            catalogManager.decreaseQuantity(id, quantity);
-            order.addToCart(quantity, catalogManager.getCatalog().get(id));
+            catalogManager.decreaseQuantity(id, parseInt(quantity));
+            order.addToCart(parseInt(quantity), catalogManager.getCatalog().get(id));
             System.out.println("_________________________________________________");
 
         }
@@ -130,28 +152,43 @@ public class TOFFEEView {
             System.out.println("2. Exit");
             Scanner scan = new Scanner(System.in);
             System.out.print("___pick one option: ");
-            int x = scan.nextInt();
-
-            if (x == 2) {
-                break;
+            String x = scan.next();
+            while (!Objects.equals(x, "1") && !Objects.equals(x, "2")) {
+                System.out.print("please enter a valid option: ");
+                x = scan.next();
             }
 
+            if (Objects.equals(x, "2")) {
+                break;
+            } else if (Objects.equals(x, "1")){
 
             while (true) {
                 System.out.println("\n___________Main Menu__________ ");
                 System.out.println("1. view Catalog");
                 System.out.println("2. CheckOut");
+                System.out.println("3. Back");
                 System.out.print("___pick one option:");
-                x = scan.nextInt();
+                x = scan.next();
+                while (!Objects.equals(x, "1") && !Objects.equals(x, "2") && !Objects.equals(x, "3")){
+                    System.out.print("please enter a valid option: ");
+                    x = scan.next();
+                }
 
-                if (x == 1) {
+                if (Objects.equals(x, "1")) {
                     shopping();
                 }
-                if (x == 2) {
+                else if (Objects.equals(x, "2")) {
                     checkOut();
                     break;
                 }
+                else if(Objects.equals(x, "3")){
+                    break;
+                }
+
             }
+            }
+
+            System.out.println("_________________________________________________");
         }
         System.out.println("\n____________SEE YOU SOON________________");
     }
