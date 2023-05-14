@@ -91,7 +91,7 @@ public class OrderManger {
      * @return order : the order that was created
      */
     public Order creatOrder(int customerId) {
-        ++orderId;
+        orderId++;
         Order order = new Order(orderId, customerId);
         orders.put(orderId, order);
         return order;
@@ -141,8 +141,11 @@ public class OrderManger {
             currentOrder.setState(State.outForDelivery);
             uploadOrders();
             orders.put(orderId, currentOrder);
+            System.out.println("Order Confirmed!");
+
         } else {
-            currentOrder.setState(State.delivered);
+            System.out.println("Order Canceled!");
+            orders.remove(orderId);
         }
 
     }

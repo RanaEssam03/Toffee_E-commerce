@@ -62,12 +62,12 @@ public class TOFFEEView {
      * @throws IOException
      */
     public void viewCatalog() {
-        System.out.printf("| %-3s | %-15s | %5s| %5s |%n", "ID", "NAME", "PRICE","Available Quantity","Brand" );
-        System.out.printf("--------------------------------%n");
+        System.out.printf("| %-3s | %-15s | %5s| %7s | %15s| %10s |%n", "ID", "NAME", "PRICE","Type","Available Quantity","Brand" );
+        System.out.printf("-----------------------------------------------------------------------------------%n");
 
         for (Map.Entry<Integer, Item> set : catalogManager.getCatalog().entrySet()) {
-            System.out.printf("| %-3s | %-15s | %5s| %5s |%n",set.getKey().toString() , set.getValue().getName().toString(),
-                    set.getValue().getPrice(), set.getValue().getQuantity() ,set.getValue().getBrand());
+            System.out.printf("| %-3s | %-15s | %5s| %7s | %18s| %10s |%n",set.getKey().toString() , set.getValue().getName().toString(),
+                    set.getValue().getPrice(), set.getValue().getType(),set.getValue().getQuantity() ,set.getValue().getBrand());
             System.out.println();
         }
         System.out.println("_________________________________________________");
@@ -79,7 +79,7 @@ public class TOFFEEView {
      */
     private void shopping() throws IOException {
         Scanner scan = new Scanner(System.in);
-        int x;
+
         Order order = orderManger.creatOrder(getCustomerId());
 
         while (true) {

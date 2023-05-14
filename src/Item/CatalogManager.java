@@ -64,8 +64,8 @@ public class CatalogManager {
      * @param quantity    refers to the available quantity in the store
      * @param price       refers to the price of the item
      */
-    public void updateCatalog(String name, String category, String description, String brand, int quantity, float price) {
-        catalog.put(++itemID, new Item(name, category, description, brand, quantity, price));
+    public void updateCatalog(String name, String category, String description, String brand, int quantity, float price, Type type) {
+        catalog.put(++itemID, new Item(name, category, description, brand, quantity, price, type));
     }
 
     /**
@@ -103,7 +103,7 @@ public class CatalogManager {
 
             while (sc.hasNext()) {
                 ArrayList<String> strings = new ArrayList<>();
-                int x = 6;
+                int x = 7;
                 int y = 0;
                 while (x != 0) {
                     String s = sc.next();
@@ -111,9 +111,16 @@ public class CatalogManager {
                     x--;
                 }
 
-                float price = Float.parseFloat(strings.get(strings.size() - 1));
-                int quantity = Integer.parseInt(strings.get(strings.size() - 2));
-                Item item = new Item(strings.get(0), strings.get(1), strings.get(2), strings.get(3), quantity, price);
+                float price = Float.parseFloat(strings.get(strings.size() - 2));
+                int quantity = Integer.parseInt(strings.get(strings.size() - 3));
+                Type type;
+                if(strings.get(6).equals("1")){
+                    type = Type.LOOSE;
+                }
+                else{
+                    type = Type.SEALED;
+                }
+                Item item = new Item(strings.get(0), strings.get(1), strings.get(2), strings.get(3), quantity, price, type);
                 cat.put(++itemID, item);
             }
 
@@ -123,9 +130,9 @@ public class CatalogManager {
             FileWriter outputfile = new FileWriter(file2);
             CSVWriter writer = new CSVWriter(outputfile);
             List<String[]> data = new ArrayList<String[]>();
-            data.add(new String[]{"1", "Lollipop", "Category2", "kids", "egyFood", "100"});
-            data.add(new String[]{"2", "Lollipop", "Category2", "kids", "egyFood", "100"});
-            data.add(new String[]{"2", "Lollipop", "Category2", "kids", "egyFood", "100"});
+            data.add(new String[]{"1", "Lollipop", "Category2", "kids", "egyFood", "100","1"});
+            data.add(new String[]{"2", "Lollipop", "Category2", "kids", "egyFood", "100","2"});
+            data.add(new String[]{"2", "Lollipop", "Category2", "kids", "egyFood", "100","1"});
             writer.writeAll(data);
             writer.close();
             loadData();
