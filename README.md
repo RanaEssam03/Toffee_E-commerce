@@ -10,7 +10,7 @@ TOFFEE is an e-commerce app that allows users to browse and purchase a variety o
 - View item details, including descriptions and prices
 - Add items to a shopping cart and proceed to checkout
 - Enter shipping and payment information to complete the order
-- View order history and track shipments
+
 
 ## Technologies Used
 
