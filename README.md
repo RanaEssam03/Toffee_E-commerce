@@ -40,15 +40,15 @@ If you would like to contribute to the CandyStore app, please follow these steps
 				and manipulating items, such as creating, updating, and deleting items.
 				It may also include features for searching, filtering, and sorting items.
 
-		-Order Package: This package provides functionality for managing orders, 
+    -Order Package: This package provides functionality for managing orders, 
 				such as creating, updating, and canceling orders. 
 				It may also include features for calculating prices, handling payments, and tracking order status.
 
-			-User Package: This package provides functionality for managing users,
+    -User Package: This package provides functionality for managing users,
 			    such as creating, updating, and deleting user accounts. It may also include features for authentication,
 				authorization, and user profile management.
 
-			-View Package: This package provides functionality for displaying data to users, 
+    -View Package: This package provides functionality for displaying data to users, 
                 such as rendering user interfaces, displaying visualizations, 
 				and handling user input. It may also include features for personalizing content based on 
 				user preferences and tracking user behavior.
