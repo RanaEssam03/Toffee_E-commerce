@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="3c9e6d49-04a8-4355-9b86-fd93cfa46726" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/src/main/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/src/main/java/org/apache/maven/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maven/src/main/java/org/apache/maven/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.csv" beforeDir="false" afterPath="$PROJECT_DIR$/items.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.txt" beforeDir="false" afterPath="$PROJECT_DIR$/order.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/CatalogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/CatalogManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order/OrderManger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order/OrderManger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/TOFFEEView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TOFFEEView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,14 +81,14 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Merging integration&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Level2 second term/intro_to_software/assignments/Assignment 3/Toffee&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rana Essam/Desktop/New folder (4)&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -143,6 +153,15 @@
       <workItem from="1683905631685" duration="606000" />
       <workItem from="1683921490403" duration="8228000" />
       <workItem from="1683931309789" duration="1934000" />
+      <workItem from="1683961874687" duration="255000" />
+      <workItem from="1683962155971" duration="581000" />
+      <workItem from="1683962808103" duration="348000" />
+      <workItem from="1683963183094" duration="653000" />
+      <workItem from="1683990863036" duration="601000" />
+      <workItem from="1683994021665" duration="17000" />
+      <workItem from="1683994664383" duration="624000" />
+      <workItem from="1683996978520" duration="158000" />
+      <workItem from="1684083347750" duration="9232000" />
     </task>
     <task id="LOCAL-00001" summary="Added functions to CatalogManager">
       <created>1683423689763</created>
@@ -194,11 +213,45 @@
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Order/OrderManger.java</url>
+          <line>157</line>
+          <properties class="Order.OrderManger" method="uploadOrders">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Order/OrderManger.java</url>
+          <line>105</line>
+          <properties class="Order.OrderManger" method="checkOutOrder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NumberFormatException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Order/OrderManger.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Order/OrderManger.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Item.CatalogManager" memberName="itemID" />
+        <PinnedItemInfo parentTag="Item.CatalogManager" memberName="catalog" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -36,7 +36,7 @@ public class LoginView {
      * @throws IOException
      */
     public void start() throws IOException {
-        int option ;
+        String option ;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("      ->Welcome to TOFFEE<-");
@@ -44,8 +44,14 @@ public class LoginView {
         System.out.println("2. Login " );
         System.out.print("Please pick one option: ");
 
-        option = scan.nextInt();
-        if(option == 1){
+        option = scan.next();
+        while (!(option.equals("1") || option.equals("2")))
+        {
+            System.out.println("\nInvalid input!!\n");
+            System.out.print("Please pick one option: ");
+            option = scan.next();
+        }
+        if(option.equals("1")){
             signUpView.signUp();
         }
         else{
@@ -65,22 +71,28 @@ public class LoginView {
         System.out.println("Please enter");
         System.out.print("Email: ");
         email  = scan.nextLine();
-        System.out.print("Password: ");
-        password = scan.nextLine();
-
+        while (!accountManager.isValidEmail(email)){
+            System.out.println("\nInvalid Email\n");
+            System.out.print("Please Enter\nEmail: ");
+            email= scan.nextLine();
+        }
         if(accountManager.isUniqueEmail(email)){
-            System.out.println("Email does not exist!!");
+            System.out.println("\nEmail does not exist!!\n");
             signUpView.signUp();
         }
 
-       else if(accountManager.checkPassword(email, password)){
+        System.out.print("Password: ");
+        password = scan.nextLine();
+
+
+        if(accountManager.checkPassword(email, password)){
            accountManager.getFileHandler().updateFile();
             toffeeView.start();
         }
        else{
            while (!(accountManager.checkPassword(email, password)))
             {
-                System.out.println("Wrong password!!");
+                System.out.println("\nWrong password!!\n");
 
                 System.out.print("Password: ");
                 password = scan.nextLine();

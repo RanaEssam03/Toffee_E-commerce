@@ -20,6 +20,8 @@ public class Item {
 
     private ItemStatus status;
 
+
+
     /**
      * Item constructor to create new one
      *
@@ -29,7 +31,7 @@ public class Item {
      * @param brand       : brand of the item.
      * @param price       : price of the item.
      */
-    Item(String name, String category, String description, String brand, int quantity, float price) {
+    Item(String name, String category, String description, String brand, int quantity, float price, Type type) {
         setName(name);
         setCategory(category);
         setDescription(description);
@@ -38,6 +40,7 @@ public class Item {
         discountPercentage = 0;
         setQuantity(quantity);
         sales = 0;
+        this.type = type;
         status = ItemStatus.NOT_ON_SALE;
         if (quantity == 0) {
             setStatus(ItemStatus.OUT_OF_STOCK);

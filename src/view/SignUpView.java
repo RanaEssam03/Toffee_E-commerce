@@ -29,17 +29,22 @@ public class SignUpView {
         email= scan.nextLine();
 
         while (!loginView.accountManager.isValidEmail(email)){
-            System.out.println("Invalid Email");
-            System.out.print("Please enter your email: ");
+            System.out.println("\nInvalid Email\n");
+            System.out.print("Please Enter\nEmail: ");
             email= scan.nextLine();
         }
         if (!loginView.accountManager.isUniqueEmail(email)){
-            System.out.println("You already have an account !");
+            System.out.println("\nYou already have an account !\n");
             loginView.login();
             return;
         }
         System.out.print("Phone: ");
         phone = scan.nextLine();
+        while (!loginView.accountManager.isValidPhone(phone)){
+            System.out.println("\nInvalid Phone!!\n");
+            System.out.print("Please enter your phone: ");
+            phone= scan.nextLine();
+        }
         System.out.print("Password: ");
         password = scan.nextLine();
 
@@ -48,19 +53,21 @@ public class SignUpView {
 
 
         while (!Objects.equals(confirmPassword, password)){
-            System.out.println("passwords do not match");
-            System.out.print("Password2: ");
+            System.out.println("\npasswords do not match!!\n");
+            System.out.print("Password: ");
             password = scan.nextLine();
             System.out.print("Confirm Password: ");
             confirmPassword = scan.nextLine();
 
         }
+        System.out.println("\nPlease wait while we send OTP to your email......\n");
         String otp = loginView.accountManager.getOtpHandler().sendOTP(email);
+        System.out.println("\nOTP has been sent to your email!\n");
         System.out.print("Please enter OTP: ");
         String otpMatch = scan.nextLine();
 
         while (!Objects.equals(otp, otpMatch)){
-            System.out.println("Invalid OTP");
+            System.out.println("\nInvalid OTP!!\n");
             System.out.print("Please enter OTP: ");
             otpMatch = scan.nextLine();
         }
